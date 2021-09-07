@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 author: Albin
-title: Technicalities and other goodies
+title: Tech shelter
 email: albin@codeindite.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is my personal blog where I discuss technical matters.
