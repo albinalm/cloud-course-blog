@@ -1,2 +1,2 @@
-# cloud-course-blog
-: ))
+# Jekyll-Test
+This is a Jekyll test repository
