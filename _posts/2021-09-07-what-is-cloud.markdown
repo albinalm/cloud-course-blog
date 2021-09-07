@@ -2,9 +2,6 @@
 layout: post
 title: Internet och Moln
 subtitle: Uppgift 1
-cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
 categories: [Uppgifter, Internet, Moln]
 ---
 Molnet är dem vita (ibland gråa och svarta) sakerna som flygger runt uppe i himlen
