@@ -6,8 +6,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Primarily this was created as an assignment, but I might use this blog for future posts as well.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "techshelter.albin.dev" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: albinalm
-github_username:  albinalm
+linkedin_username: albin-alm-b45522192
+github_username: albinalm
 
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
