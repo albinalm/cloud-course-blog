@@ -13,6 +13,15 @@ background: '/img/posts/githubactions/banner.jpg'
 <h1>What is GitHub Actions?</h1>
 <p>GitHub actions is a tool like <a href="https://www.jenkins.io/" style="color: cornflowerblue !important;" target="_blank">Jenkins</a> that is used to automate workflow in a project.
   This is done through a so called pipeline where you queue different events to be triggered depending on the configuration. <br><br>
-  In this article I'll primarily talk about a CI/CD<i>(Continuous Integration, Continous Delivery & Continous Deployment)</i> 
-  pipeline.
+  In this article I'll primarily talk about a CI<i>(Continuous Integration)</i> pipeline.
 </p>
+<h2>Continuous Integration Pipeline</h2>
+<p>
+  Basically a CI Pipeline is a method or rather an approach to automate workflow with specific steps so you can deliver a new version of your software.
+  Usually a CI Pipeline is combined with CD<i>(Continuous delivery & Continuous deployment)</i> which adds a few more steps, but I'll stick to talking about the part of the process.
+  <br><br>
+  Continuous Integration combines three vital steps; <strong>Build, Test & Merge.</strong> Through these steps everytime you update your application to your master branch the software will automatically be built, code tested and then merged.
+  If any of these steps fails, the process will be stopped. So it is important that you program using TDD<i>(Test-driven development)</i> to make the most of this type of pipeline.
+</p>
+<h2>Implementation of CI in a repository</h2>
+<p>In this section I'll display how I implemented a quick CI Pipeline through my test project using GitHub Actions.</p>
