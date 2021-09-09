@@ -56,20 +56,21 @@ The reason for wanting to use Ubuntu is because it will boot alot faster and has
 
 <h3>Delving deeper into the YML-configuration</h3>
 <h4>Optimizing building, restoring and publishing</h4>
+<p>Prepare your braincells now, they're going for a ride!</p>
 <p>Not only did I change the OS to save time, I could also add parameters to dotnet for avoiding redundancy in the workflow.
-  Everytime you run "dotnet publish, dotnet test & dotnet run" it will always run two commands before executing: "dotnet restore and dotnet build".<br>
-  And everytime you run "dotnet build", it will always also restore.
+  Everytime you run "dotnet <strong>publish</strong>, dotnet <strong>test</strong> & dotnet <strong>run</strong>" it will always run two commands before executing: "dotnet <strong>restore</strong> and dotnet <strong>build</strong>".<br>
+  And everytime you run "dotnet <strong>build</strong>", it will always also <strong>restore</strong>.
   <br>
   Since we run many of these commands we can add parameters to skip some of these steps and make the process run faster.
-  First of all we never actually restore the project, we do this through the build command. Since the project at that point has been built and restored we can for the testing phase add the parameter "--no-build" to just use the existing build for testing.
+  First of all we never actually restore the project, we do this through the build command. Since the project at that point has been built and restored we can for the testing phase add the parameter <strong>"--no-build"</strong> to just use the existing build for testing.
   <br>
-  But for the publish we must rebuild the application since it uses a different configuration setup. Although we don't need to restore the project twice, so we add the parameter "--no-restore".
+  But for the publish we must rebuild the application since it uses a different configuration setup. Although we don't need to restore the project twice, so we add the parameter <strong>"--no-restore"</strong>.
 </p>
 <h5>Configuring triggers for workflow</h5>
-<p>Default settings is for the process to trigger everytime you commit a pull request to 
-  the main branch or if you push directly to it. In this case I reconfigured the 
+<p>The default settings makes the process to trigger everytime you commit a pull request to 
+  the main branch, or if you push directly to it. In this case I reconfigured the 
   triggers to trigger everytime you push to any branch.
-<br>This is achieved through specifying branch through '**' which translates into "any".</p>
+<br>This is achieved through specifying branch through <i>'**'</i> which translates into <i>"any"</i>.</p>
   
 <h4>Conclusions</h4>
 <p>
@@ -80,7 +81,6 @@ The reason for wanting to use Ubuntu is because it will boot alot faster and has
 <br>
 <h6>Now go out there and start automating your own workflow!</h6>
 <p>/Albin</p>
-<br>
 <p><i>Sources:</i></p>
 <a href="https://www.redhat.com/en/topics/devops/what-cicd-pipeline" target="_blank" style="color: cornflowerblue !important;">What is CI/CD Pipeline?</a>
 
