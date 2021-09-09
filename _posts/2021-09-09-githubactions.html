@@ -57,12 +57,13 @@ The reason for wanting to use Ubuntu is because it will boot alot faster and has
 <h3>Delving deeper into the YML-configuration</h3>
 <h4>Optimizing building, restoring and publishing</h4>
 <p>Prepare your braincells now, they're going for a ride!</p>
-<p>Not only did I change the OS to save time, I could also add parameters to dotnet for avoiding redundancy in the workflow.
+<p>Not only did I change the OS to save time, I could also add parameters to dotnet for avoiding redundancy in the workflow.<br>
   Everytime you run "dotnet <strong>publish</strong>, dotnet <strong>test</strong> & dotnet <strong>run</strong>" it will always run two commands before executing: "dotnet <strong>restore</strong> and dotnet <strong>build</strong>".<br>
   And everytime you run "dotnet <strong>build</strong>", it will always also <strong>restore</strong>.
   <br>
   Since we run many of these commands we can add parameters to skip some of these steps and make the process run faster.
-  First of all we never actually restore the project, we do this through the build command. Since the project at that point has been built and restored we can for the testing phase add the parameter <strong>"--no-build"</strong> to just use the existing build for testing.
+  First of all we never actually restore the project through a command, we do this through the <strong>build</strong> command.<br> 
+  Since the project at this point has already been built and restored we can for the testing phase add the parameter <strong>"--no-build"</strong> to use the recently made build for testing instead of making a new one.
   <br>
   But for the publish we must rebuild the application since it uses a different configuration setup. Although we don't need to restore the project twice, so we add the parameter <strong>"--no-restore"</strong>.
 </p>
