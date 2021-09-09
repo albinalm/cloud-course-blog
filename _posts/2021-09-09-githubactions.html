@@ -17,28 +17,28 @@ background: '/img/posts/githubactions/banner.jpg'
 </p>
 <h2>Continuous Integration Pipeline</h2>
 <p>
-  Basically a CI Pipeline is a method or rather an approach to automate workflow with specific steps so you can deliver a new version of your software.
+  Basically a CI Pipeline is a method and approach to automate workflow with specific steps, so you can deliver a new version of your software.
   Usually a CI Pipeline is combined with CD<i>(Continuous delivery & Continuous deployment)</i> which adds a few more steps to the process.
   <br><br>
   Continuous Integration combines three vital steps; <strong>Build, Test & Merge.</strong> Through these steps everytime you attempt to add new code or features to your master branch, your project will automatically be built, tested and then merged with the new code.
-  Should any of these steps fails, the process will be stopped and keeping the last stable version. To make this pipeline reliable, it's important that you develop using TDD<i>(Test-driven development)</i>.
+  Should any of these steps fails, the process will be stopped and keeping the last stable version of your application. To make this pipeline reliable, it's important that you develop using TDD<i>(Test-driven development)</i>.
 </p>
 <h2>Implementation of CI in a repository</h2>
 <p>In this section I'll display how I implemented a quick CI Pipeline through my test project using GitHub Actions.</p>
 <br>
-<p>First of all I created a quick application that simply writes out some text.</p>
+<p>First of all I created a quick application that simply outputs some text.</p>
 <img src="https://techshelter.albin.dev/img/posts/githubactions/code_01.jpg">
 <p>In this solution I also added a unit testing project with some no-brain tests for demonstration purposes.</p>
 <img src="https://techshelter.albin.dev/img/posts/githubactions/code_02.png">
 <p>Now, after publishing this project to a GitHub repository I can start configuring GitHub Actions.<br>
-When you setup your workflow in GitHub Actions it will suggest a template depending on the contents of the repository. Now you should sometimes take this with a grain of salt. For instance, in my case it suggested the .NET template that automates project build, testing and then publishing.
+When you setup your workflow in GitHub Actions it will suggest a template depending on the contents of the repository. Now you should sometimes take this with a grain of salt. For instance, in my case it suggested the .NET template which automates project build, testing and then publishing.
 <br>
 <br>
 Sounds all good on paper doesn't it? Well, the thing is - in my case this can be optimized alot. Since the default template contains several steps of installing .NET Core to the server and 
-then running it on Windows OS it makes the process really slow. This is unnecessary because my repository is a console project, and therefore can run on .NET 5 with Ubuntu instead.
+then running it on Windows OS it makes the process slow. This is unnecessary because my repository is a console project, and therefore can run on .NET 5 with Ubuntu instead.
 <br>
 <br>
-The reason for wanting to use Ubuntu is because it will boot alot faster and has .NET 5 built in to the OS, which more than triples the time needed to automate this process. If my project would've contained for example WPF, this wouldn't have been possible.
+The reason for wanting to use Ubuntu is because it will boot alot faster since it's generally faster and has .NET 5 built-in, which makes the process <strong>three times as fast</strong>. Although worth noting; if my project would've contained for example WPF, this wouldn't have been possible.
 <br>Here's a few examples to show the default template vs my optimized template:
 <br>
 <p><strong>Default</strong></p>
@@ -51,7 +51,7 @@ The reason for wanting to use Ubuntu is because it will boot alot faster and has
 <img src="https://techshelter.albin.dev/img/posts/githubactions/workflow_time_optimized.png">
 <br>
 <p>As you may see, it's important to build a workflow specific to your needs. This may be more difficult and time consuming, but will save you alot of time in the long run. 
-  Imagine saving 60 seconds everytime you push to master branch. After 100 pushes it will save you almost 2 hours!</p>
+  Imagine saving 60 seconds everytime you push to master branch. After 100 pushes it will have saved you almost 2 hours!</p>
 </p>
 
 <h3>Delving deeper into the YML-configuration</h3>
