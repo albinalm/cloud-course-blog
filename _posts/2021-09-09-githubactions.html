@@ -18,10 +18,61 @@ background: '/img/posts/githubactions/banner.jpg'
 <h2>Continuous Integration Pipeline</h2>
 <p>
   Basically a CI Pipeline is a method or rather an approach to automate workflow with specific steps so you can deliver a new version of your software.
-  Usually a CI Pipeline is combined with CD<i>(Continuous delivery & Continuous deployment)</i> which adds a few more steps, but I'll stick to talking about the part of the process.
+  Usually a CI Pipeline is combined with CD<i>(Continuous delivery & Continuous deployment)</i> which adds a few more steps to the process.
   <br><br>
-  Continuous Integration combines three vital steps; <strong>Build, Test & Merge.</strong> Through these steps everytime you update your application to your master branch the software will automatically be built, code tested and then merged.
-  If any of these steps fails, the process will be stopped. So it is important that you program using TDD<i>(Test-driven development)</i> to make the most of this type of pipeline.
+  Continuous Integration combines three vital steps; <strong>Build, Test & Merge.</strong> Through these steps everytime you attempt to add new code or features to your master branch, your project will automatically be built, tested and then merged with the new code.
+  Should any of these steps fails, the process will be stopped and keeping the last stable version. To make this pipeline reliable, it's important that you develop using TDD<i>(Test-driven development)</i>.
 </p>
 <h2>Implementation of CI in a repository</h2>
 <p>In this section I'll display how I implemented a quick CI Pipeline through my test project using GitHub Actions.</p>
+<br>
+<br>
+<p>First of all I created a quick application that simply writes out some text.</p>
+<img src="https://techshelter.albin.dev/img/posts/githubactions/code_01.png">
+<p>In this solution I also added a unit testing project with some no-brain tests for demonstration purposes.</p>
+<img src="https://techshelter.albin.dev/img/posts/githubactions/code_02.png">
+<p>Now, after publishing this project to a GitHub repository I can start configuring GitHub Actions.<br>
+When you setup your workflow in GitHub Actions it will suggest a template depending on the contents of the repository. Now you should sometimes take this with a grain of salt. For instance, in my case it suggested the .NET template that automates project build, testing and then publishing.
+<br>
+Sounds all good on paper doesn't it? Well, the thing is - in my case this can be optimized alot. Since the default template contains several steps of installing .NET Core to the server and 
+then running it on Windows OS it makes the process really slow. This is unnecessary because my repository is a console project, and therefore can run on .NET 5 with Ubuntu instead.
+<br>
+The reason for wanting to use Ubuntu is because it will boot alot faster and has .NET 5 built in to the OS, which more than triples the time needed to automate this process. If my project would've contained for example WPF, this wouldn't have been possible.
+<br>Here's a few examples to show the default template vs my optimized template:
+<br>
+<p><strong>Default</strong></p>
+<img src="https://techshelter.albin.dev/img/posts/githubactions/workflow_template.png">
+<p><strong>Optimized</strong></p>
+<img src="https://techshelter.albin.dev/img/posts/githubactions/workflow_optimized.png">
+<p><strong>Running time on default template</strong></p>
+<img src="https://techshelter.albin.dev/img/posts/githubactions/workflow_time_template.png">
+<p><strong>Running time on optimized workflow</strong></p>
+<img src="https://techshelter.albin.dev/img/posts/githubactions/workflow_time_optimized.png">
+<br>
+<p>As you may see, it's important to build a workflow specific to your needs. This may be more difficult and time consuming, but will save you alot of time in the long run. 
+  Imagine saving 60 seconds everytime you push to master branch. After 100 pushes it will save you almost 2 hours!</p>
+</p>
+
+<h3>Delving deeper into the YML-configuration</h3>
+<h4>Optimizing building, restoring and publishing</h4>
+<p>Not only did I change the OS to save time, I could also add parameters to dotnet for avoiding redundancy in the workflow.
+  Everytime you run "dotnet publish, dotnet test & dotnet run" it will always run two commands before executing: "dotnet restore and dotnet build".<br>
+  And everytime you run "dotnet build", it will always also restore.
+  <br>
+  Since we run many of these commands we can add parameters to skip some of these steps and make the process run faster.
+  First of all we never actually restore the project, we do this through the build command. Since the project at that point has been built and restored we can for the testing phase add the parameter "--no-build" to just use the existing build for testing.
+  <br>
+  But for the publish we must rebuild the application since it uses a different configuration setup. Although we don't need to restore the project twice, so we add the parameter "--no-restore".
+</p>
+<h5>Configuring triggers for workflow</h5>
+<p>Default settings is for the process to trigger everytime you commit a pull request to 
+  the main branch or if you push directly to it. In this case I reconfigured the 
+  triggers to trigger everytime you push to any branch.
+<br>This is achieved through specifying branch through '**' which translates into "any".</p>
+  
+<h4>Conclusions</h4>
+<p>
+  This is an extremely simple way to setup a CI Pipeline, but it also shows how powerful it can be when configured appropriately. Should I now add new features, and some tests then push to GitHub this workflow till automatically be triggered.
+  <br>
+  It can also be customized in a matter of ways, you could add automatic merges and more to make it as effective as possible for your specific project.
+</p>
