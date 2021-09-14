@@ -55,3 +55,13 @@ For this Dockerfile I entered the following code:</p>
     <span style="size: small !important;"><strong>And thus, the dockerfile is ready to go!</strong></span>
 </p>
 <h4>Setting up imaging on the GitHub Actions Pipeline</h4>
+<p>When I first arrived at GitHub I had to prepare some credential variables before I could start working on my docker image.<br>
+This is done by creating a <i>personal access token</i> through my GitHub account and Developer settings. Afterwards adding that code to my repository secrets under the name "SECURITY_TOKEN". <br><br>
+
+Now that I have prepared my access token I can begin setting up my Docker workflow. The YML-configuration file became the following:</p>
+<img src="https://techshelter.albin.dev/img/posts/dockerimaging/docker-workflow.jpg">
+<p>I decide this job will be run everytime we merge or push to the master branch.<br>
+The job starts with an authorization to GitHub via GitHub Container Registry<i>(ghcr.io)</i> using the prepared credentials. When I have been authorized we can build and push our image.'
+<br>
+I set the context to the entire directory using the “.“, and I set the push parameter to true since I desired to push the image to the cloud. The <i>“:latest“</i> tag specifies that I wish to package the latest version of my application.
+</p>
