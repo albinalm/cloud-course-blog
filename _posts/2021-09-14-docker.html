@@ -38,7 +38,7 @@ Long story short, it's kinda like running the software on a VM but without a hyp
 <h3>Getting started</h3>
 <p>First of all i forked an <a href="https://github.com/skjohansen/SimpleWebHalloWorld" target="_blank" style="color: cornflowerblue !important;"> ASP.NET reference project</a> from my professor <a href="https://github.com/skjohansen" target="_blank" style="color: cornflowerblue !important;">Stephan Kaas Johansen</a> to use for this demonstration. <br><br>
 
-When the project had been cloned down I opened a local terminal window and added my Dockerfile with the command <strong><i>code Dockerfile</i></strong>.<br>
+When the project had been cloned I opened a local terminal window and added my Dockerfile with the command <strong><i>code Dockerfile</i></strong>.<br>
 For this Dockerfile I entered the following code:</p>
 <img src="https://techshelter.albin.dev/img/posts/dockerimaging/dockerfile.jpg">
 <p>The FROM section specifies my base image in which case I used .NET Core 3.1, but you can replace this with a newer image if desired.
@@ -46,22 +46,26 @@ For this Dockerfile I entered the following code:</p>
     Afterwards I set the destination folder for the container which usually is <i>/app</i>
     <br>
     <br>
-    Now, we have set the base image and created a workspace for the container. Therefore we start to copy the project file and then running dotnet restore, to restore all files from the project and essentially creating a copy of the project in the container. 
-    When the project has been restored we follow up with publishing it.
+    Now the base image has been set and a workspace for the container been created. Therefore it can now start to copy the project file and running dotnet restore to restore all files and dependencies from the project and essentially creating a copy in the container folder. 
+    When the project has been restored it will continue by publishing the application.
     <br>
     <br>
-    Lastly I specify my build image which is the same as the base image and set the current directory to <i>/app</i>. Lastly we copy the published project to the subdirectory called <i>"out"</i> and then specify the Entrypoint which is the starting parameters.
+   The build image will be set to the same as the base image and the current directory will be set to <i>/app</i>. Lastly it copies the published application to the subdirectory called <i>"out"</i> and specifies the Entrypoint which is the starting parameters.
     <br>
     <span style="size: small !important;"><strong>And thus, the dockerfile is ready to go!</strong></span>
 </p>
 <h4>Setting up imaging on the GitHub Actions Pipeline</h4>
 <p>When I first arrived at GitHub I had to prepare some credential variables before I could start working on my docker image.<br>
-This is done by creating a <i>personal access token</i> through my GitHub account and Developer settings. Afterwards adding that code to my repository secrets under the name "SECURITY_TOKEN". <br><br>
+This is done by creating a <i>personal access token</i> through my GitHub account and afterwards adding that code to my repository secrets under the name "SECURITY_TOKEN". <br><br>
 
 Now that I have prepared my access token I can begin setting up my Docker workflow. The YML-configuration file became the following:</p>
 <img src="https://techshelter.albin.dev/img/posts/dockerimaging/docker-workflow.jpg">
-<p>I decide this job will be run everytime we merge or push to the master branch.<br>
-The job starts with an authorization to GitHub via GitHub Container Registry<i>(ghcr.io)</i> using the prepared credentials. When I have been authorized we can build and push our image.'
+<p>I decided the job will be ran everytime a merge or push to the master branch occurs.
 <br>
-I set the context to the entire directory using the “.“, and I set the push parameter to true since I desired to push the image to the cloud. The <i>“:latest“</i> tag specifies that I wish to package the latest version of my application.
+<br>
+The job begins with an authorization to GitHub via GitHub Container Registry<i>(ghcr.io)</i> using the prepared credentials. When the authorization is complete it can start building and pushing the image.'
+<br>
+I set the context to the entire directory using the “ . “, and the push parameter to true since one of the points of this article is pushing the image to the cloud. 
+<br>
+The <i>“:latest“</i> tag specifies that I wish to package the latest version of my application.
 </p>
