@@ -46,7 +46,7 @@ For this Dockerfile I entered the following code:</p>
     Afterwards I set the destination folder for the container which usually is <i>/app</i>
     <br>
     <br>
-    Now the base image has been set and a workspace for the container been created. Therefore it can now start to copy the project file and running dotnet restore to restore all files and dependencies from the project and essentially creating a copy in the container folder. 
+    Now the base image has been set and a workspace for the container been created. Therefore it can now start to copy the project file and running <strong>dotnet restore</strong> to restore all files and dependencies from the project and essentially creating a copy in the container folder. 
     When the project has been restored it will continue by publishing the application.
     <br>
     <br>
@@ -76,7 +76,7 @@ The YML-configuration file became the following:</p>
 <p>The job is set to be activated everytime a merge or push to the master branch occurs through the <i>“on“</i> parameter.
 <br>
 <br>
-The job begins with an authorization to GitHub via GitHub Container Registry<i>(ghcr.io)</i> using the prepared credentials. When the authorization is complete it can start building and pushing the image.'
+The job begins with an authorization to GitHub via GitHub Container Registry<i>(ghcr.io)</i> using the prepared credentials. When the authorization is complete it can start building and pushing the image.
 <br><br>
 I set the context to the entire directory using the “ . “, and the push parameter to true since one of the points of this article is pushing the image to the cloud. 
 <br>
