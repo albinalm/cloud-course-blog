@@ -38,19 +38,39 @@ It's like paying for each MB when using your mobile network instead of having a 
 
 <h5>Setting up the project</h5>
 <p>I tried this out and developed a library to do some "quick mafs" and then return the result. I did this directly in the Azure portal.<br><br>
-First and foremost when arriving at the Azure portal, I created a new "Function app" and added a function called Calculate. The language for this library is C#.
+First and foremost when arriving at the Azure portal, I created a new "Function app" and added a function called "Calculate". The language for this library is C#.<br>
 <img src="https://techshelter.albin.dev/img/posts/azure/azure_01.jpg"><br>
 <a href="https://techshelter.albin.dev/img/posts/azure/azure_code.jpg" target="_blank" style="color: cornflowerblue !important;">You can view the code here</a><br>
-The code will take the variable input in a post request, attempt to calculate it and return the result as a string. Pretty simple.</p>
+The code will take the variable "input" in a post request, attempt to calculate it and return the result as a string. Pretty simple.</p>
+
 <h5>Connecting the application to a GitHub repository.</h5>
 <p>Before doing anything I made an empty repository in my GitHub profile. <br>To connect my application I first navigated to the "Distribution center" tab in my application overview. From there I connected to the repository and generated a <a href="#" target="_blank" style="color: cornflowerblue !important;"><strong>Personal access token.</strong></a>
 <br>Doing this generates a workflow file in the repository</p>
 <img src="https://techshelter.albin.dev/img/posts/azure/azure_02.jpg">
-<p>Now I basically was connected to my empty repository with a broken workflow pipeline. Everything was a mess, but a good one since I now had everything I needed to set up my CI pipe!<br>
-To begin making the repository in sync with the Azure project, and making <strong>Dotnet restore</strong> work in the pipeline I cloned the empty repository to VSCode and downloaded the source files from Azure.<br></p>
+<p>Basically I was now connected to my empty repository with a broken workflow pipeline. Doesn't sound very good does it? But despite how it sounds, it's actually exactly what I wanted, since I now had everything I needed to set up my CI pipe!<br><br>
+To begin making the repository in sync with the Azure project and making <strong>Dotnet restore</strong> work in the pipeline, I cloned the empty repository in VSCode and downloaded the source files from Azure.<br></p>
 <img src="https://techshelter.albin.dev/img/posts/azure/azure_03.jpg">
 <p>Afterards pasting all of these source files in the cloned repository folder and pushing.<br>
 <strong>Voila!</strong> GitHub repository was now in sync with the Azure project.</p>
+<h5>Configuring the pipeline</h5>
+<p>Now, configuring my pipeline was actually a bit of trial and error since the default one doesn't really work out of the box.<br>
+Initially I had to fix the typo regarding what .NET version to use.</p>
+<img src="https://techshelter.albin.dev/img/posts/azure/azure_gh_01.jpg">
+<p>This was changed to 2.0 since that is what the Azure project is based upon. I learned this by first running 5.0 and getting error messages regarding that it was missing 2.0 libraries.<br>
+After making this fix, the pipeline works fine and I could now make changes to my project in VSCode, push it to the main branch and letting it get updated on Azure automatically. <strong>Super smooth!</strong>
+<br>
+<a href="#" target="_blank" style="color: cornflowerblue !important;">View the full workflow file here</a></p>
+<img src="https://techshelter.albin.dev/img/posts/azure/azure_gh_02.jpg">
+<h5>Validating & testing code</h5>
+<p>In this case scenario I tested my code directly in the GUI in Azure. This is because the code can only have 3 different outcomes, so there was no need for ambigious testing solutions. <br>
+But the thought to it is just as important. Were I to implement tests for this project I'd first make a test project for the API, and setup some fancy tests. In the workflow file I would add a section for <strong>Dotnet test</strong> to validate my code before pushing to Azure.<br>
+Obviously this test project might not be valid and not detected in Azure, but that isn't relevant either. Whats important is that my pipeline can execute the tests and then if it succeeds continue pushing to Azure. Testing the code in Azure itself isn't really required if you do it this way.<br><br>
+This can be done in a number of ways, but that is how I would do it on this project.</p>
+<h5>Summary</h5>
+<p>This was way less work than I first anticipated. This is because Microsoft offers very good automated services for implementing these kind of things. I imagine for a novice this would be difficult to setup manually without any templates. <br>
+My personal opinion though is that it's very good we have these fast ways of implementing services. Generally speaking some automated processing is frowned down upon because it's "cooler" to do it yourself. Absolutely, but doing it manually is like running a marathon without shoes.</p>
+
+
 <br>
 <br>
 <h6>Thank you for reading!</h6>
