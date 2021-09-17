@@ -66,7 +66,7 @@ After making this fix, the pipeline works fine and I could now make changes to m
 But the thought to it is just as important. Were I to implement tests for this project I'd first make a test project for the API, and setup some fancy tests. In the workflow file I would add a section for <strong>Dotnet test</strong> to validate my code before pushing to Azure.<br>
 Obviously this test project might not be valid and not detected in Azure, but that isn't relevant either. Whats important is that my pipeline can execute the tests and then if it succeeds continue pushing to Azure. Testing the code in Azure itself isn't really required if you do it this way.<br><br>
 This can be done in a number of ways, but that is how I would do it on this project. <br>
-<span style="font-size: larger !important;"><strong>Setup job > Pre-checkout > Setup DotNet > Restore project > Test project > Push to Azure > Post-checkout</strong></span></p>
+<strong>Setup job > Pre-checkout > Setup DotNet > Restore project > Test project > Push to Azure > Post-checkout</strong></p>
 <h5>Summary</h5>
 <p>This was way less work than I first anticipated. This is because Microsoft offers very good automated services for implementing these kind of things. I imagine for a novice this would be difficult to setup manually without any templates. <br>
 My personal opinion though is that it's very good we have these fast ways of implementing services. Generally speaking some automated processing is frowned down upon because it's "cooler" to do it yourself. Absolutely, but doing it manually is like running a marathon without shoes.</p>
