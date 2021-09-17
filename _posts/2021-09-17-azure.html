@@ -59,7 +59,7 @@ Initially I had to fix the typo regarding what .NET version to use.</p>
 <p>This was changed to 2.0 since that is what the Azure project is based upon. I learned this by first running 5.0 and getting error messages regarding that it was missing 2.0 libraries.<br>
 After making this fix, the pipeline works fine and I could now make changes to my project in VSCode, push it to the main branch and letting it get updated on Azure automatically. <strong>Super smooth!</strong>
 <br>
-<a href="#" target="_blank" style="color: cornflowerblue !important;">View the full workflow file here</a></p>
+<a href="https://github.com/albinalm/pgbsnh20-azure-calculatorapp/blob/main/.github/workflows/main_calculator-pgbsnh20aalm.yml" target="_blank" style="color: cornflowerblue !important;">View the full workflow file here</a></p>
 <img src="https://techshelter.albin.dev/img/posts/azure/azure_gh_02.jpg"><br><br>
 <h5>Validating & testing code</h5>
 <p>In this case scenario I tested my code directly in the GUI in Azure. This is because the code can only have 3 different outcomes, so there was no need for ambigious testing solutions. <br><br>
@@ -67,6 +67,12 @@ But the thought to it is just as important. Were I to implement tests for this p
 Obviously this test project might not be valid and not detected in Azure, but that isn't relevant either. Whats important is that my pipeline can execute the tests and then if it succeeds continue pushing to Azure. Testing the code in Azure itself isn't really required if you do it this way.<br><br>
 This can be done in a number of ways, but that is how I would do it on this project. <br>
 <strong>Setup job > Pre-checkout > Setup DotNet > Restore project > Test project > Push to Azure > Post-checkout</strong></p>
+<h5>Security risks</h5>
+<p>The most obvious security flaw in this solution is injection. This is not limited to these kind of serverless applications, but generally a weakness in RESTful API:s. <br>
+Injection means that you can enter different types of code in the request via for instance Postman or directly in the address bar. If there is no proper validation, the host computer will read this code and execute it. <br>
+An example of a common SQL injection when breaching logins is giving a statement that always returns true. When you attempt to validate a login, the result will always be either true or false. By injecting your login request with random credentials and adding "or 0=0" the statement will always return true and you will be authorized to access desired resources.<br>
+The best solution to this is always validating what passes through and thus making sure you only get what you are expecting. <br>
+If you think this is interesting I strongly suggest you checking out <a href="https://www.youtube.com/user/RootOfTheNull" target="_blank" style="color:cornflowerblue !important;">John Hammond's YouTube channel</a> where he talks and demonstrates about these subjects.</p>
 <h5>Summary</h5>
 <p>This was way less work than I first anticipated. This is because Microsoft offers very good automated services for implementing these kind of things. I imagine for a novice this would be difficult to setup manually without any templates. <br>
 My personal opinion though is that it's very good we have these fast ways of implementing services. Generally speaking some automated processing is frowned down upon because it's "cooler" to do it yourself. Absolutely, but doing it manually is like running a marathon without shoes.</p>
@@ -77,4 +83,12 @@ My personal opinion though is that it's very good we have these fast ways of imp
 <h6>Thank you for reading!</h6>
 <p>/Albin</p>
 <p><i>Sources:</i></p>
+<a href="https://www.cloudflare.com/learning/serverless/what-is-serverless/" target="_blank" style="color: cornflowerblue !important;">What is serverless computing?</a>
 
+<br>
+
+<a href="https://www.cloudflare.com/learning/serverless/glossary/function-as-a-service-faas/" target="_blank" style="color: cornflowerblue !important;">What is FaaS?</a>
+
+<br>
+
+<a href="https://www.youtube.com/user/RootOfTheNull" target="_blank" style="color: cornflowerblue !important;">John Hammond regarding injections and security breaching</a>
