@@ -71,7 +71,7 @@ This can be done in a number of ways, but that is how I would do it on this proj
 <p>The most obvious security flaw in this solution is injection. This is not limited to these kind of serverless applications, but generally a weakness in RESTful API:s. <br>
 Injection means that you can enter different types of code in the request via for instance Postman or directly in the address bar. If there is no proper validation, the host computer will read this code and execute it. <br>
 An example of a common SQL injection when breaching logins is giving a statement that always returns true. When you attempt to validate a login, the result will always be either true or false. By injecting your login request with random credentials and adding "or 0=0" the statement will always return true and you will be authorized to access desired resources.<br>
-The best solution to this is always validating what passes through and thus making sure you only get what you are expecting. <br>
+The best solution to this is always validating what passes through and thus making sure you only get what you are expecting. <br><br>
 If you think this is interesting I strongly suggest you checking out <a href="https://www.youtube.com/user/RootOfTheNull" target="_blank" style="color:cornflowerblue !important;">John Hammond's YouTube channel</a> where he talks and demonstrates about these subjects.</p>
 <h5>Summary</h5>
 <p>This was way less work than I first anticipated. This is because Microsoft offers very good automated services for implementing these kind of things. I imagine for a novice this would be difficult to setup manually without any templates. <br>
