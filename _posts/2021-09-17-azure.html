@@ -16,7 +16,22 @@ Well, the reason being that it's a way to manage your back-end server without pa
 Long story short, it's named serverless because the developer doesn't need to worry about any servers, not because theres isn't any.</p>
 <h2>Function-as-a-service</h2>
 <p>Function as a service(Faas) is one of many serverless methods. It's primarily used to execute smaller events and running code reactively on demand. In this article i'll soon talk about how I made a calculator API as a <strong>FaaS</strong>. <br>
-Instead of making the entire library and hosting it on a server and giving response to each request, I can host it on for instance Azure as a FaaS. There it can be executed directly in the cloud and I only need to pay each time it's executed. This makes it very flexible and cost efficient. It's paying for each MB when using your mobile network instead of having a fixed amount. Sometimes you don't use up everything and you end up wasting money. </p>
+Instead of making the entire library and hosting it on a server and giving response to each request, I can host it on for instance Azure as a FaaS. There it can be executed directly in the cloud and I only need to pay each time it's executed. This makes it very flexible and cost efficient. 
+It's like paying for each MB when using your mobile network instead of having a fixed amount. Sometimes you don't use up everything and you end up wasting money.</p>
+<h5>Advantages of serverless & FaaS</h5>
+<p>There are many advantages of using FaaS, some of them being:</p>
+<ul>
+    <li><strong>Focusing on whats important.</strong> FaaS saves developer the headache of worrying about servers and operation.</li>
+    <li><strong>Pricing.</strong> FaaS scales according to your needs. No need to pay for operating servers, just paying for the service & code</li>
+    <li><strong>Less worrying about capacity,</strong> Need more services? More computing? No need to upgrade your infrastructure. Just keep adding, since it scales to your demand. This point ties into the first one.</li>
+</ul>
+<h6>Disadvantages of serverless & FaaS</h6>
+<p>Obviously such thing also comes with it's downsides. In some cases there is just simply better to do it yourself!</p>
+<ul>
+    <li><strong>Pricing.</strong> This is kinda funny because it was also an advantage. Don't forget that you also pay for service and platform contribution. If you plan your own build well and are efficient  it will be cheaper to host yourself in the long run. Bothersome,  but cheaper.</li>
+    <li><strong>Vendor lock-i.</strong> You become tied to your vendor. If you change your mind later on, even if it's hosting yourself or just swapping vendor it is a very troublesome task, even if vendors tell you it's simple.</li>
+    <li><strong>Control.</strong> You place your code and infrastructure in hands of others. This might be a good thing because you can focus on development, but in the end you are still out of reach if something happens.</li>
+</ul>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
