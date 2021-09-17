@@ -33,11 +33,15 @@ It's like paying for each MB when using your mobile network instead of having a 
     <li><strong>Control.</strong> You place your code and infrastructure in hands of others. This might be a good thing because you can focus on development, but in the end you are still out of reach if something happens.</li>
 </ul>
 <h2>Developing a FaaS calculator API with a CI pipeline</h2>
-<p>Earlier today I tried this out and developed some code to do some "quick mafs" and then return the result. I did this directly on the Azure portal.<br><br>
-First of all when I arrived at the overview page of Azure I created a new Function app and added a function called Calculate. The language for this library is C#.
+
+<br><br>
+
+<h5>Setting up the project</h5>
+<p>I tried this out and developed a library to do some "quick mafs" and then return the result. I did this directly in the Azure portal.<br><br>
+First and foremost when arriving at the Azure portal, I created a new "Function app" and added a function called Calculate. The language for this library is C#.
 <img src="https://techshelter.albin.dev/img/posts/azure/azure_01.jpg"><br>
 <a href="https://techshelter.albin.dev/img/posts/azure/azure_code.jpg" target="_blank" style="color: cornflowerblue !important;">You can view the code here</a><br>
-The code will take input as a post request, format it and return the result as a string. Pretty simple.</p>
+The code will take the variable input in a post request, attempt to calculate it and return the result as a string. Pretty simple.</p>
 <h5>Connecting the application to a GitHub repository.</h5>
 <p>Before doing anything I made an empty repository in my GitHub profile. <br>To connect my application I first navigated to the "Distribution center" tab in my application overview. From there I connected to the repository and generated a <a href="#" target="_blank" style="color: cornflowerblue !important;"><strong>Personal access token.</strong></a>
 <br>Doing this generates a workflow file in the repository</p>
