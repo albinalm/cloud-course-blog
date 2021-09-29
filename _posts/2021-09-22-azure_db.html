@@ -4,7 +4,7 @@ title: A database amongst the clouds
 date: 2021-09-22 17:00 -0400
 subtitle: Databases can't fly!
 categories: [Assignments, Azure, Database]
-background: '/img/posts/azure_db/banner.jpg'
+background: '/img/posts/cosmosdb/banner.jpg'
 ---
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="https://techshelter.albin.dev/favicon.png">
@@ -74,9 +74,36 @@ Now pressing <strong>F5</strong> to debug the server and then right clicking the
 </p>
 <h5>Setting up GitHub and CI Pipeline</h5>
 <p>
-
+Now, this project was already connected to a Git-repo. If you are following this guide and this hasn't been done, do so now. <br><br>
+You can continously deploy the function directly to Azure using the VSCode extension, but something that is much better is making GitHub actions do it for us automatically and thus creating a CI Pipeline.<br>
+To just get things going though we'll need to deploy it once using the VSCode extension. This is to get our <i>publish profile</i> which we'll need later.<br>
+To do this open the extension and click the button with a cloud and an arrow.<br>
+<img src="https://techshelter.albin.dev/img/posts/cosmosdb/04.jpg"><br><br>
+Once it is deployed - access your Azure portal, enter the overview of your function app and click "Download publish profile"<br>
+<img src="https://techshelter.albin.dev/img/posts/cosmosdb/05.jpg"><br><br>
+Now keep this document open since you will need to paste this data in GitHub as a secret. To do this navigate to your repository, enter settings and paste the data a new secret. I named mine <i>AZURE_FUNCTIONAPP_PUBLISH_PROFILE</i>.<br>
+This data contains sensitive information necessary to authorize your deploy to Azure, that is why we use repository secrets to store this data.
+<br><br>
+Now we can create a workflow file. This was made by creating a file in the root of the repository and changing the filename to: <i>.github/workflows/devops_ci-pipe.yml</i><br>
+This is what my workflow ended up looking like:<br><br>
+<img src="https://techshelter.albin.dev/img/posts/cosmosdb/06.jpg"><br>
+<i>First I setup the 3.1 .NET environment on the Ubuntu server to match the one used to drive the function.<br>
+Afterwards we build the project with .NET<br>
+Lastly we deploy it as a package to Azure using the publish profile we stored in the repository.</i>
 </p>
-
+<h5>The workflow and app is complete!</h5>
+<p>
+    Now we have a function endpoint that we can use to create documents in our database. This function can be called by applications or websites. For instance, I could easily code this directly on my Privateer application.
+</p>
+<h5>Pricing</h5>
+<p>To actually run this, what would it really cost? Well it kind of depends really since we pay per use.<br>
+    But to get some kind of number, I used the <a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank" style="color: cornflowerblue !important;">Azure Pricing Calculator</a> and made a very simple setup, since we won't need much to run this anyway.
+    <br>
+    The conclusion became 225 SEK per month. This was by having the free amount of requests for the function which is 1 million executions per month. That is more than enough since for now the function is only used to create accounts, and I doubt i'll be getting more than 1 million users per month.
+    <br>
+    Regarding the CosmosDB 400 RU/s is enough since we'll not make more than 400 requests per second using this simple setup. <br>
+    <a href="https://techshelter.albin.dev/img/posts/cosmosdb/azure_pricing.pdf" target="_blank" style="color: cornflowerblue !important;">Link to PDF for pricing</a>
+</p>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
