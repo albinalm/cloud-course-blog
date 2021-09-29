@@ -99,10 +99,10 @@ Lastly we deploy it as a package to Azure using the publish profile we stored in
 <p>To actually run this, what would it really cost? Well it kind of depends really since we pay per use.<br>
     But to get some kind of number, I used the <a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank" style="color: cornflowerblue !important;">Azure Pricing Calculator</a> and made a very simple setup, since we won't need much to run this anyway.
     <br>
-    The conclusion became 225 SEK per month. This was by having the free amount of requests for the function which is 1 million executions per month. That is more than enough since for now the function is only used to create accounts, and I doubt i'll be getting more than 1 million users per month.
+    The conclusion became 225 SEK per month. This was by having the free amount of requests for the function which is 1 million executions per month. That is more than enough since the function is only used to create accounts and I doubt I'll be getting more than 1 million users per month.
     <br>
     Regarding the CosmosDB 400 RU/s is enough since we'll not make more than 400 requests per second using this simple setup. <br>
-    <a href="https://techshelter.albin.dev/img/posts/cosmosdb/azure_pricing.pdf" target="_blank" style="color: cornflowerblue !important;">Link to PDF for pricing</a>
+    <a href="https://techshelter.albin.dev/img/posts/cosmosdb/azure-pricing.pdf" target="_blank" style="color: cornflowerblue !important;">Link to PDF for pricing</a>
 </p>
 <br>
 <br>
