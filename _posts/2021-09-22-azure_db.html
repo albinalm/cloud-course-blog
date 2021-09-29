@@ -47,11 +47,12 @@ Now before proceeding we'll need our ConnectionString as a variable. This can be
 <span style="color: white !important; background-color: gray !important;"><i>"DatabaseString": "AccountEndpoint=ireallylovecookies/;AccountKey=noreallycookiesareamazing.it'saworkofartandwhoevercameupwithitisreallyageniousandwehavehimtothankforeternity."</i></span><br>
 Here's an image to demonstrate.<br>
 <img src="https://techshelter.albin.dev/img/posts/cosmosdb/01.jpg"><br>
-<strong>Great!</strong> I now had a working database, a function to work with. Now I just need these two interacting with eachother. Naturally the function should be the extroverted one and take contact with the database, so hopping on AddAccount.cs and starting coding was the next step.<br>
+<br>
+<strong>Great!</strong> I now had a working database and a function to work with. Now I just need these two interacting with eachother. Naturally the function should be the extroverted one and take contact with the database, so hopping on AddAccount.cs and starting coding was the next step.<br>
 The function I had was a good starting template, but useless in my case. Following the Microsoft excercise I added below code to quickly create a document in my database:
 <br>
 <img src="https://techshelter.albin.dev/img/posts/cosmosdb/02.jpg"><br>
-<i>This just simply adds a document in JSON format containing a random "Account ID" and the ID of the document itself. The thought here was having each Privateer account have a unique ID connected to their account. Inspiration taken from the VPN app "Mullvad".<br>
+<i>This just simply adds a document in JSON format containing a random "Account ID" and the ID of the document itself. The thought here was having each Privateer account have a unique ID connected to their account and authorize using that instead of credentials. Inspiration taken from the VPN app "Mullvad".<br>
 Although I will be using SQL for this in the future instead.</i>
 
 
