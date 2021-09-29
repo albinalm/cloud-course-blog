@@ -26,6 +26,22 @@ To do this yourself you will need <a href="https://code.visualstudio.com/" targe
         <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureresourcegroups" target="_blank" style="color: cornflowerblue !important;">Azure Resources</a><br>
     </li>
 </ul>
+<br>
+First of all using the Azure extensions, I login and created a Azure function to interact with our database through the GUI in VSCode and used the following settings:
+<ol>
+    <li><strong>Language: </strong> C#</li>
+    <li><strong>.NET Runtime: </strong> 3.1 LTS</li>
+    <li><strong>Template: </strong> HTTP Trigger</li>
+    <li><strong>Name: </strong>AddAccount</li>
+    <li><strong>Namespace: </strong>Privateer.Register</li>
+    <li><strong>Auth level: </strong>Anonymous(This lets anyone call my endpoint)</li>
+</ol><br>
+Afterwards creating the database using the same tools with the settings below:
+<ol>
+    <li><strong>DB Name: </strong>UserDB</li>
+    <li><strong>Collection name: </strong>UserCollection</li>
+    <li><strong>Parition key: </strong>/id</li>
+</ol><br>
 
 
 
