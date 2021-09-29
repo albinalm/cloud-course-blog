@@ -36,12 +36,15 @@ First of all using the Azure extensions, I login and created a Azure function to
     <li><strong>Namespace: </strong>Privateer.Register</li>
     <li><strong>Auth level: </strong>Anonymous(This lets anyone call my endpoint)</li>
 </ol><br>
-Afterwards creating the database using the same tools with the settings below:
+Afterwards creating the CosmosDB using the same tools with the settings below:
 <ol>
     <li><strong>DB Name: </strong>UserDB</li>
     <li><strong>Collection name: </strong>UserCollection</li>
     <li><strong>Parition key: </strong>/id</li>
 </ol><br>
+Now before proceeding we'll need our ConnectionString as a variable. Since we'll initially run our function locally we'll need to store the data in <i>local.settings.json</i>. This will later be stored in Azure as a secret once we commit. ATT: Make sure this file is ignored in Git.<br>
+<i>"DatabaseString": "AccountEndpoint=ireallylovecookies/;AccountKey=noreallycookiesareamazing.it'saworkofartandwhoevercameupwithitisreallyageniousandwehavehimtothankforeternity."</i><br>
+
 
 
 
