@@ -82,7 +82,7 @@ To do this open the extension and click the button with a cloud and an arrow.<br
 <img src="https://techshelter.albin.dev/img/posts/cosmosdb/04.jpg"><br><br>
 Once it is deployed - access your Azure portal, enter the overview of your function app and click "Download publish profile"<br>
 <img src="https://techshelter.albin.dev/img/posts/cosmosdb/05.jpg"><br><br>
-Now keep this document open since you will need to paste this data in GitHub as a secret. To do this navigate to your repository, enter settings and paste the data a new secret. I named mine <i>AZURE_FUNCTIONAPP_PUBLISH_PROFILE</i>.<br>
+Now keep this document open since you will need to paste this data in GitHub as a secret. To do this navigate to your repository, enter settings and paste the data in a new secret. I named mine <i>AZURE_FUNCTIONAPP_PUBLISH_PROFILE</i>.<br>
 This data contains sensitive information necessary to authorize your deploy to Azure, that is why we use repository secrets to store this data.
 <br><br>
 Now we can create a workflow file. This was made by creating a file in the root of the repository and changing the filename to: <i>.github/workflows/devops_ci-pipe.yml</i><br>
