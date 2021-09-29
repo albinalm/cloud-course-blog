@@ -65,16 +65,16 @@ Now pressing <strong>F5</strong> to debug the server and then right clicking the
 <h5>Thoughts about the layout</h5>
 <p>
     Now the project I had was in my opinion well and mobile. The code is easy to replace since it still contains the core class files. (When the application gets published to Azure, they become non-changeable .JSON files executed from a .DLL file)<br>
-    If the layout of the app would have to change, it's easy to just make a new collection using CosmosDB. Since each document is a JSON I could've easily made a query to interchange column data when pushing up to the new collection. <br>
-    Okay, I know that sentence was hard to follow, let me give you an example:<br>
-    Let's say our <i>UserCollection</i> for some reason needs to have column changed. The UserID tab now has to be renamed to UniqueID. Then we could've easily exported the collection with each document as a JSON-file.<br>
-    Secondly just using simple string formatting replacing each field for each document, import this data into the new collection and removing the old one.
-    <br><br>This was just one example and one scenario. My main point being it's much simple than using for instance SQL, since it's document-based. Also doing this costs nothing since you only pay for throughput. There is no intial cost for re-creating a collection.<br>
-    To add to this, the procedure can sound bothersome - but remember probably 90% of this is scriptable which makes it really flexible and simple.
+    If the layout of the database would have to change, it's easy to adapt by just make a new collection using CosmosDB. Each document is a JSON-file which means could've easily made a query to interchange column data when pushing up to the new collection. <br><br>
+    Okay, I know that sentence was hard to follow, let me give you an example:<br><br>
+    Let's say our <i>UserCollection</i> for some reason needs to have column changed. The UserID tab now has to be renamed to UniqueID. If this was the case, I could've easily exported the collection as a bundle of JSON-files.<br>
+    Afterwards just using simple string formatting replacing each field for each document nad lastly import this data into the new collection and removing the old one.
+    <br><br>This was just one ridiculous scenario. But my main point is that it's much more simple than using for instance SQL, this is because it's document-based. Also, this procedure costs nothing since you only pay for throughput. There is no intial cost for re-creating a collection.<br>
+    To add to this, the procedure may sound bothersome - but remember probably 90% of this is scriptable which makes it really flexible and simple.
 </p>
 <h5>Setting up GitHub and CI Pipeline</h5>
 <p>
-    
+
 </p>
 
 <br>
