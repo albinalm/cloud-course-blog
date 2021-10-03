@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Azure Static Web app, React and Azure functions!
+title: Azure Static Web App, React and Azure functions!
 date: 2021-09-29 17:00 -0400
 subtitle: What could go wrong?
 categories: [Assignments, Azure, Static-web-app]
@@ -50,6 +50,24 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     </ul><br>
     Create your app and wait a few minutes for it to finish.
     Then visit the address in the overview page of your newly created Azure app and you should be presented with the same React logo as when you debugged earlier.
+    This process should also automatically add a workflow file. <a href="#" target="_blank" style="color: cornflowerblue !important;">Reference here.</a>
+</p><br>
+<h5>Adding Azure Functions</h5><br>
+<p>
+    Now we have our website connected to Azure and GitHub. The only thing left is adding content!
+    For this demonstration I just simply connected an API telling us a good ol' hello.<br>
+    To do this you first need to install the extension <a href="#" target="_blank" style="color: cornflowerblue !important;">Azure Static Web Apps</a><br>
+    Then press <strong><i>F1</i></strong> to open the command field and then you search for <strong><i>Azure Static Web Apps: Create HTTP-function</i></strong>
+    Select the following settings:<br>
+    <ul>
+        <li><strong>Language: </strong>JavaScript</li>
+        <li><strong>Name: </strong> message</li>
+    </ul><br>
+    This will generate an Azure Functions project in your file tree. It should be located in a new folder called <strong><i>"api"</i></strong>.
+    Open <strong><i>index.js</i></strong> in your Azure Functions project and enter below code:<br>
+    <img src="https://techshelter.albin.dev/img/posts/azure_static_app/03.jpg" href="" target="_blank"><br>
+    <i>Click the image to arrive at source if you wish to copy contents.</i><br><br>
+    This code will send a response containing the <i>"text object"</i> with the contents we added. Now we just need to make our start page ask for this content on load.<br><br>
 </p>
 <br>
 <h6>Thank you for reading!</h6>
