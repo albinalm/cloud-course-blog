@@ -16,8 +16,16 @@ In this article I'll explain how I made a website using Azure Static Web App, ga
 Obviously we will incorporate a CI pipeline through this project, like we have done with all the earlier ones.
 
 <h5>Creating the foundation</h5>
-To begin I made a foundation using React with the command <strong><i>"npx create-react-app MyFirstApp"</i></strong>. To install this command you can get it from npm with <strong><i>"npm i create-react-app"</i></strong>
-<br>
+To begin I made a foundation using React with the command <strong><i>"npx create-react-app MyFirstApp"</i></strong>. To install this command you can get it from NPM with <strong><i>"npm i create-react-app"</i></strong><br>
+This will give us a startup project with React.
+Afterwards to simplify debugging I had to install Yarn. This was done via NPM with <strong><i>"npm install --global yarn"</i></strong><br>
+At this point you should have a project tree looking something like this:<br>
+<img src="https://techshelter.albin.dev/img/posts/azure_static_app/06.jpg"><br>
+<i>Minus the api folder of course which we'll get to later.</i></p>
+<h5>Setting up the GitHub pipeline</h5>
+<p>
+    The next step is setting all of this up to GitHub and then publish it to Azure from there. 
+</p>
 <br>
 <h6>Thank you for reading!</h6>
 <p>/Albin</p>
