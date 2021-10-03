@@ -79,8 +79,11 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     This code will send a request to our API and return the data as a JSON-object. This JSON-object contains the object fields we specified in the API. In this case it's called <strong><i>text</i></strong>.<br>
     Then we tell React to display our content using the setData parameter which we declared above using the state hook.<br><br>
     Push this to your repository and wait a few minutes for GitHub to deploy it in Azure. Your website should then look like below:<br>
-    <img src="https://techshelter.albin.dev/img/posts/azure_static_app/05.jpg"><br><br>
-</p>
+    <img src="https://techshelter.albin.dev/img/posts/azure_static_app/05.jpg"><br><br> 
+    Now you can just keep adding new functions and tell React to display or maybe store data in the way you like. Azure Functions basically work like a API that returns a JSON object containing whatever you want it to contain.
+    Fetching data this way is a good way to eliminate cold starts since Azure Functions just work fast straight out.<br>
+    Everytime you push the project it will be automatically updated in the Azure Static App.<br><br>
+</p> 
 <h5>Personal thoughts about the project</h5>
 <br>
 <h6>Thank you for reading!</h6>
