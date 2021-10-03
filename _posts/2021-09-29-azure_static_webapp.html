@@ -33,7 +33,23 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     The next step is setting all of this up to GitHub and then publish it to Azure from there. <br><br>
     First of all your project will need to be connected to a repository. You can do this in many ways.
     I usually just create a repository, clone it and paste all the content then pushing. I know you can do it by git commandline, but I am a rebel like that ok?<br>
-    Afterwards we have our working react app connected to GitHub. Now it's setting up the connection to Azure and implementing our function as an API.
+    Afterwards we have our working react app connected to GitHub. Now it's setting up the connection to Azure and implementing our function as an API.<br>
+    <br>
+    This is done by logging into Azure Portal and just creating a new static web app. Once you're presented with the different options you will have to pick the following:
+    <br>
+    <ul>
+        <li><strong>Name: </strong><i>Optional</i></li>
+        <li><strong>Plan: </strong>Free</li>
+        <li><strong>Region: </strong><i>Optional</i></li>
+        <li><strong>Source: </strong>GitHub
+        <br><i>Here you login and select your repository.</i></li>
+        <li><strong>Presets: </strong>React</li>
+        <li><strong>App location: </strong>/</li>
+        <li><strong>API-location: </strong>api</li>
+        <li><strong>Build location: </strong>build</li>
+    </ul><br>
+    Create your app and wait a few minutes for it to finish.
+    Then visit the address in the overview page of your newly created Azure app and you should be presented with the same React logo as when you debugged earlier.
 </p>
 <br>
 <h6>Thank you for reading!</h6>
