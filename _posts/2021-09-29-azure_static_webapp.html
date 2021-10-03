@@ -24,7 +24,7 @@ At this point you should have a project tree looking something like this:<br>
 <i>"Minus the api folder of course which we'll get to later."</i><br><br>
 Once you're set, test the application using the command <strong><i>npm start</i></strong>. You should be presented with the following:<br>
 <img src="https://techshelter.albin.dev/img/posts/azure_static_app/02.jpg"><br><br>
-If all succeeds, we need to build the application using the comnmand <strong><i>yarn build</i></strong> This will publish the webiste to a new folder called "build". It's important we remove that folder from the .gitignore file, since thats the folder where Azure will fetch our website later.
+If all succeeds, we need to build the application using the comnmand <strong><i>yarn build</i></strong> This will publish the webiste to a new folder called "build".
 
 
 </p>
@@ -50,7 +50,8 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     </ul><br>
     Create your app and wait a few minutes for it to finish.
     Then visit the address in the overview page of your newly created Azure app and you should be presented with the same React logo as when you debugged earlier.
-    This process should also automatically add a workflow file. <a href="#" target="_blank" style="color: cornflowerblue !important;">Reference here.</a>
+    This process should also automatically add a workflow file. <a href="#" target="_blank" style="color: cornflowerblue !important;">Reference here.</a><br>
+    The workflow file will automatically build our website each time it is ran, which means you will never need to build it yourself unless you wish to debug before pushing.
 </p><br>
 <h5>Adding Azure Functions</h5><br>
 <p>
@@ -70,7 +71,17 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     </a><br>
     <i>Click the image to arrive at source if you wish to copy contents.</i><br><br>
     This code will send a response containing the <i>"text object"</i> with the contents we added. Now we just need to make our start-page ask for this content on load.<br><br>
+    Navigate to <strong><i>src/App.js</i></strong> and replace all content with the following:
+    <a href="#" target="_blank">
+        <img src="https://techshelter.albin.dev/img/posts/azure_static_app/04.jpg">
+    </a><br>
+    <i>Just like before - click the image to arrive at source if you wish to copy contents.</i><br><br>
+    This code will send a request to our API and return the data as a JSON-object. This JSON-object contains the object fields we specified in the API. In this case it's called <strong><i>text</i></strong>.<br>
+    Then we tell React to display our content using the setData parameter which we declared above using the state hook.<br><br>
+    Push this to your repository and wait a few minutes for GitHub to deploy it in Azure. Your website should then look like below:<br>
+    <img src="https://techshelter.albin.dev/img/posts/azure_static_app/05.jpg"><br><br>
 </p>
+<h5>Personal thoughts about the project</h5>
 <br>
 <h6>Thank you for reading!</h6>
 <p>/Albin</p>
