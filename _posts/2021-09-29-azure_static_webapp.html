@@ -50,14 +50,14 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     </ul><br>
     Create your app and wait a few minutes for it to finish.
     Then visit the address in the overview page of your newly created Azure app and you should be presented with the same React logo as when you debugged earlier.
-    This process should also automatically add a workflow file. <a href="#" target="_blank" style="color: cornflowerblue !important;">Reference here.</a><br>
+    This process should also automatically add a workflow file. <a href="https://github.com/albinalm/pgbsnh20-react-azure-static-app/actions/runs/1301167269/workflow" target="_blank" style="color: cornflowerblue !important;">Reference here.</a><br>
     The workflow file will automatically build our website each time it is ran, which means you will never need to build it yourself unless you wish to debug before pushing.
 </p><br>
 <h5>Adding Azure Functions</h5><br>
 <p>
     Now we have our website connected to Azure and GitHub. The only thing left is adding content!
     For this demonstration I just simply connected an API telling us a good ol' hello.<br>
-    To do this you first need to install the extension <a href="#" target="_blank" style="color: cornflowerblue !important;">Azure Static Web Apps</a><br>
+    To do this you first need to install the extension <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps" target="_blank" style="color: cornflowerblue !important;">Azure Static Web Apps</a><br>
     Then press <strong><i>F1</i></strong> to open the command field and then you search for <strong><i>Azure Static Web Apps: Create HTTP-function</i></strong>
     Select the following settings:<br>
     <ul>
@@ -66,13 +66,13 @@ If all succeeds, we need to build the application using the comnmand <strong><i>
     </ul><br>
     This will generate an Azure Functions project in your file tree. It should be located in a new folder called <strong><i>"api"</i></strong>.
     Open <strong><i>index.js</i></strong> in your Azure Functions project and enter below code:<br>
-    <a href="#" target="_blank">
+    <a href="https://github.com/albinalm/pgbsnh20-react-azure-static-app/blob/main/api/message/index.js" target="_blank">
         <img src="https://techshelter.albin.dev/img/posts/azure_static_app/03.jpg">
     </a><br>
     <i>Click the image to arrive at source if you wish to copy contents.</i><br><br>
     This code will send a response containing the <i>"text object"</i> with the contents we added. Now we just need to make our start-page ask for this content on load.<br><br>
     Navigate to <strong><i>src/App.js</i></strong> and replace all content with the following:
-    <a href="#" target="_blank">
+    <a href="https://github.com/albinalm/pgbsnh20-react-azure-static-app/blob/main/src/App.js" target="_blank">
         <img src="https://techshelter.albin.dev/img/posts/azure_static_app/04.jpg">
     </a><br>
     <i>Just like before - click the image to arrive at source if you wish to copy contents.</i><br><br>
@@ -91,11 +91,11 @@ Using the <a href="https://azure.microsoft.com/en-us/pricing/calculator/" target
 Because the application is so thin, 100GB of bandwidth with 0.5GB storage is alright and that is actually free! The only thing we'll need to actually pay for is the Azure Functions. Realistically if this website was populated, we'd need alot of them.<br>
 Therefore if we imagine the website was highly populated it would be a good idea to pick Azure Premium service for Azure functions.<br>
 This gives us 1 pre-warmed instance for 730 working hours together with another 730 hours in outscaled units.<br>
-The accessibility to pre-warmed instances is necessary since the website will fetch most of it's data through Azure functions, we'll really need to eliminate those pesky cold-starts.
+The accessibility to pre-warmed instances is necessary since the website will fetch most of it's data through Azure functions and therefore we'll really need to eliminate those pesky cold-starts.
 The cheapest premium pack which gives us 3.5GB RAM and 250GB storage will cost us 3651.38 SEK which is very cheap considering this webiste will have millions of visits in our imagination.<br>
 </p>
 
 <br>
-<h6>Thank you for reading!</h6>
+<h6>A cheap way to host websites using Azure!</h6>
 <p>/Albin</p>
 <p><i>Sources:</i></p>
