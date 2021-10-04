@@ -53,7 +53,10 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     By establishing a VPN connection we can simulate being on-prem over the internet while still maintaining the same security levels as physically being on that network.
     <br><br>
     <h5>Azure ExpressRoute</h5>
-    
+    Microsoft has developed something that they call "Microsoft Backbone". This is a isolated network owned, controlled and maintained by Microsoft. It is highly ambitious and secure and completely paralell from the internet.<br>
+    By implementing Azure ExpressRoute we can connect our VNet through the backbone to our private on-prem network. All the Azure traffic will route through ExpressRoute instead of the internet and thus never exposing our data on the internet.<br><br>
+    <h5>Azure Private Link</h5>
+
 
 </p>
 <br>
