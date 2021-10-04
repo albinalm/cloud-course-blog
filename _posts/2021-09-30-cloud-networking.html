@@ -13,10 +13,27 @@ background: '/img/posts/cloud_networking/banner.jpg'
 <h1>Introduction</h1>
 <p>
 In this article I'll pick a scenario where we have a CTO who is very sceptical. I mean all techies are, but this one is just a bit more spiced up than usual.<br>
-Anyway my job is to convince him to implement a enterprise bus. In this case Azure Service Bus. Unfortunately the CTO is not on board this train, because the data cannot be transferred publicly over the internet. <br>
+Anyway my job is to convince him to implement a enterprise bus which in this case is Azure Service Bus. Unfortunately the CTO is not on board with this train because the data cannot be transferred publicly over the internet. <br>
 I will attempt to convince our CTO by using facts and tell him this problem can be solved with Azure Private Link.
 </p>
-<h5>Introduction</h5>
+<h2>What is Azure Service Bus?</h2>
+<p>
+    <h5>Workflow comparison</h5>
+    To begin understanding how we can secure a connection between our services and clients through Azure, we must first know what Azure Service Bus is.<br>
+    Azure Service Bus is kind of like a postman. Everytime we wish to tell our applicaton something we need to send a message. This can contain anything from data to instructions. Think of it like sending a letter or package. <br>
+    The enterprise bus will manage all of these messages and make sure they end up where they should. The really cool part about it is that all of it are done asynchronously. <br>
+    This solution can greatly increase workflow and make our application feel alot more snappier. Instead of letting our application wait for the entire process when we need something - we can just validate all the necessary information, put the request in the service bus and let it do all the work behind the curtains. The front-end user can get an OK message right after the data has been validated instead of waiting for the process to fully complete.<br>
+    Let's say we have a webshop. When the user has finished ordering, we can either let the customer wait several minutes for the entire process to complete, or make the customer wait 30 seconds while we validate the data. If all is good, we can do the rest asynchronously and tell the customer we're working on the order. If all back-end succeeds we can just send an email with confirmation. <br>
+    Below is a couple of images showing you the difference between a stone-age-style of handling orders, versus using a service bus:<br>
+    <img src="https://techshelter.albin.dev/img/posts/cloud_networking/01.jpg"><br>
+    <img src="https://techshelter.albin.dev/img/posts/cloud_networking/02.jpg"><br><br>
+    <h5>How does it work?</h5>
+    Everytime we give the enterprise bus something to do(Let's say 50 people order in 3 seconds), all of these messages will be added to what's called a message queue. That means they will be sent in the order they came in. This is called the FIFO principle. <br>
+    Obviously, these messages is highly configurable, so we can give messages different priority queues. If a message fails it will be added to what is called a DLQ.
+
+    
+
+</p>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
