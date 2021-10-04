@@ -29,7 +29,7 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     <img src="https://techshelter.albin.dev/img/posts/cloud_networking/02.jpg"><br><br>
     <h5>Bulk management</h5><br>
     Everytime we give the enterprise bus something to do(Let's say 50 people order in 3 seconds), all of these messages will be added to what's called a message queue. That means they will be sent in the order they came in. This is called the FIFO principle which stands for First-in, First-out. <a href="https://techterms.com/definition/fifo" target="_blank" style="color: cornflowerblue !important;">You can read more about it here</a> <br>
-    Obviously, these messages is highly configurable, so we can give messages different priority queues.<br>
+    Obviously, these messages is highly configurable, so we can give messages different priority queues.<br><br>
     <h5>Managing stuck messages</h5>
     Every message can have a set TTL(Time to live), this is basically a stopwatch telling a message to be dropped if nothing happens if a certain amount of time. Although a message can be "prepared for sending", this will override the TTL since it's already locked and loaded for being sent.<br><br>
     <h5>Managing failed messages</h5>
