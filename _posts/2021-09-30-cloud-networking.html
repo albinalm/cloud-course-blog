@@ -35,9 +35,11 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     <h5>Managing failed messages</h5>
     The enterprise bus has something that is called a DLQ. This stands for <i>Dead letter queue</i>. That is a little room where messages land that fails. In the DLQ there is not TTL, since we do not want our failed messages to be removed because we need them for troubleshooting.<br>
     The DLQ can also have monitoring, giving us an alarm when a message has been failed, so we can investigate immediately.<br><br>
-    
-
+    <h5>Security</h5>
+    This is just an example in how an enterprise bus can improve our platform. This case scenario can be customized in many ways, and there is just a better way of handling our data. <br>
+    By implementing this we can use Azure PaaS which has many advantages since we can focus more on production & development instead of operations. But to adress the elephant in the room; Security we'll need to talk about Azure Private Link and how that will prevent our communiations to be done publicly.
 </p>
+<h2>Azure Private Link</h2>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
