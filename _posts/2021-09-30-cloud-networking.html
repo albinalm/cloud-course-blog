@@ -39,7 +39,7 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     Above is just an example in how an enterprise bus can improve our platform. This case scenario can be customized in many ways, and there is just a better way of handling our data. <br>
     By implementing this we can use Azure PaaS which has many advantages since we can focus more on production & development instead of operations. But to adress the elephant in the room; Security we'll need to talk about Azure Private Link and how that will prevent our communiations to be done publicly.
 </p>
-<h2>How can we secure our data transfers?</h2>
+<h2>How can we secure our data transfers?</h2><br>
 <h5>Virtual Private Cloud</h5>
 <p>
     A virtual private cloud is a platform and environment for keeping virtual machines and services running.
@@ -52,19 +52,23 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     A VPN is basically like a tunnel that goes between your client and the resource. This tunnel is "underground" and isolated from the rest of the public internet.<br>
     By establishing a VPN connection we can simulate being on-prem over the internet while still maintaining the same security levels as physically being on that network.
     <br><br>
+    </p>
     <h5>Azure ExpressRoute</h5>
-    Microsoft has developed something that they call "Microsoft Backbone". This is a isolated network owned, controlled and maintained by Microsoft. It is highly ambitious and secure and completely paralell from the internet.<br>
-    By implementing Azure ExpressRoute we can connect our VNet through the backbone to our private on-prem network. All the Azure traffic will route through ExpressRoute instead of the internet and thus never exposing our data on the internet.<br><br>
+    <p>
+        Microsoft has developed something that they call "Microsoft Backbone". This is a isolated network owned, controlled and maintained by Microsoft. It is highly ambitious and secure and completely paralell from the internet.<br>
+        By implementing Azure ExpressRoute we can connect our VNet through the backbone to our private on-prem network. All the Azure traffic will route through ExpressRoute instead of the internet and thus never exposing our data on the internet.<br><br>
+    </p>
     <h5>Azure Private Link</h5>
-    Azure Private Link is our solution to connecting our VNet, Azure Resources and on-prem networks on a private link(pun intended) to keep the data secure and off the internet.
-    This data instead travels through the same backbone as mentioned above but without using any public IP.
+    <p>
+        Azure Private Link is our solution to connecting our VNet, Azure Resources and on-prem networks on a private link(pun intended) to keep the data secure and off the internet.
+        This data instead travels through the same backbone as mentioned above but without using any public IP.
     <br>
     By implementing a private endpoint in the VNet, which acts as a NIC-adapter with it's own private IP adress and then linking our Azure resource to that endpoint using Azure Private Link we can then connect to our Azure Resources without ever using a public IP adress!<br>
     On top of this, we can configure rules and access groups on the VM in our VNet to control what we want to pass through this link.
     Every private endpoint is only linked to a single resource. This avoids any data leakage since every resource is isolated from eachother.
     <br><br>
     Connecting resources with private endpoints is highly flexible since we can connect the same resource to multiple endpoints and thus letting our clients access resources on demand by setting up a private endpoint on their VNet the same way we did on ours.<br>
-</p><br><br>
+    </p><br><br>
 <h3>Conclusion</h3>
 <p>
     Both ExpressRoute and PrivateLink utilizes the highly secure backbone, the difference is that Private Link let us use a private IP adress instead of our public IP when accessing our resource using the private NIC-adapter on the VNet. This can be good for security reasons since we can completely block public IP adresses via our firewall when connecting to our resource.<br>
