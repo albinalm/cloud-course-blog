@@ -33,8 +33,8 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     <h5>Managing stuck messages</h5>
     Every message can have a set TTL(Time to live), this is basically a stopwatch telling a message to be dropped if nothing happens if a certain amount of time. Although a message can be "prepared for sending", this will override the TTL since it's already locked and loaded for being sent.<br><br>
     <h5>Managing failed messages</h5>
-    The enterprise bus has something that is called a DLQ. This stands for <i>Dead letter queue</i>. That is a little room where messages land that fails. In the DLQ there is not TTL, since we do not want our failed messages to be removed because we need them for troubleshooting.<br>
-    The DLQ can also have monitoring, giving us an alarm when a message has been failed, so we can investigate immediately.<br><br>
+    The enterprise bus has something that is called a DLQ. This stands for <i>Dead letter queue</i>. That is a little room where messages land that fails. In the DLQ there is no TTL, since we do not want our failed messages to be removed because we need them for troubleshooting.<br>
+    The DLQ can also have monitoring, giving us an alarm when a message has failed so we can investigate immediately.<br><br>
     <h5>Security</h5>
     This is just an example in how an enterprise bus can improve our platform. This case scenario can be customized in many ways, and there is just a better way of handling our data. <br>
     By implementing this we can use Azure PaaS which has many advantages since we can focus more on production & development instead of operations. But to adress the elephant in the room; Security we'll need to talk about Azure Private Link and how that will prevent our communiations to be done publicly.
