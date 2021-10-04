@@ -57,7 +57,7 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     By implementing Azure ExpressRoute we can connect our VNet through the backbone to our private on-prem network. All the Azure traffic will route through ExpressRoute instead of the internet and thus never exposing our data on the internet.<br><br>
     <h5>Azure Private Link</h5>
     Azure Private Link is our solution to connecting our VNet, Azure Resources and on-prem networks on a private link(pun intended) to keep the data secure and off the internet.
-    This data instead travels through the same backbone as mentioned above.
+    This data instead travels through the same backbone as mentioned above but without using any public IP.
     <br>
     By implementing a private endpoint in the VNet, which acts as a NIC-adapter with it's own private IP adress and then linking our Azure resource to that endpoint using Azure Private Link we can then connect to our Azure Resources without ever using a public IP adress!<br>
     On top of this, we can configure rules and access groups on the VM in our VNet to control what we want to pass through this link.
@@ -67,6 +67,9 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
 </p><br><br>
 <h3>Conclusion</h3>
 <p>
+    Both ExpressRoute and PrivateLink utilizes the highly secure backbone, the difference is that Private Link let us use a private IP adress instead of our public IP when accessing our resource using the private NIC-adapter on the VNet. This can be good for security reasons since we can completely block public IP adresses via our firewall when connecting to our resource.<br>
+    See image below for example:<br>
+    <img src="https://techshelter.albin.dev/img/posts/cloud_networking/03.jpg"><br><br>
     All in all, we will be able to monitor and control all passthrough completely while being isolated from the network while still taking advantage of Azure services and their flexible scalabilty and pricing.<br>
     We can let operations be led by the professional teams at Microsoft, expand resources at will without any involvement without sacrificing any security. All we need is a proper setup using the above tools, and we have a extraordinary platform to expand upon and being set for the future!
 </p>
