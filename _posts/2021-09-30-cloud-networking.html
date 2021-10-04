@@ -29,12 +29,12 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     <img src="https://techshelter.albin.dev/img/posts/cloud_networking/02.jpg"><br><br>
     <h5>Bulk management</h5><br>
     Everytime we give the enterprise bus something to do(Let's say 50 people order in 3 seconds), all of these messages will be added to what's called a message queue. That means they will be sent in the order they came in. This is called the FIFO principle which stands for First-in, First-out. <a href="https://techterms.com/definition/fifo" target="_blank" style="color: cornflowerblue !important;">You can read more about it here</a> <br>
-    Obviously, these messages is highly configurable, so we can give messages different priority queues.
-    <h5>Managing stuck messages</h5><br>
-    Every message can have a set TTL(Time to live), this is basically a stopwatch telling a message to be dropped if nothing happens if a certain amount of time. Although a message can be "prepared for sending", this will override the TTL since it's already locked and loaded for being sent.<br>
+    Obviously, these messages is highly configurable, so we can give messages different priority queues.<br>
+    <h5>Managing stuck messages</h5>
+    Every message can have a set TTL(Time to live), this is basically a stopwatch telling a message to be dropped if nothing happens if a certain amount of time. Although a message can be "prepared for sending", this will override the TTL since it's already locked and loaded for being sent.<br><br>
     <h5>Managing failed messages</h5>
     The enterprise bus has something that is called a DLQ. This stands for <i>Dead letter queue</i>. That is a little room where messages land that fails. In the DLQ there is not TTL, since we do not want our failed messages to be removed because we need them for troubleshooting.<br>
-    The DLQ can also have monitoring, giving us an alarm when a message has been failed, so we can investigate immediately.
+    The DLQ can also have monitoring, giving us an alarm when a message has been failed, so we can investigate immediately.<br><br>
     
 
 </p>
