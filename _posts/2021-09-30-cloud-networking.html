@@ -36,10 +36,26 @@ I will attempt to convince our CTO by using facts and tell him this problem can 
     The enterprise bus has something that is called a DLQ. This stands for <i>Dead letter queue</i>. That is a little room where messages land that fails. In the DLQ there is no TTL, since we do not want our failed messages to be removed because we need them for troubleshooting.<br>
     The DLQ can also have monitoring, giving us an alarm when a message has failed so we can investigate immediately.<br><br>
     <h5>Security</h5>
-    This is just an example in how an enterprise bus can improve our platform. This case scenario can be customized in many ways, and there is just a better way of handling our data. <br>
+    Above is just an example in how an enterprise bus can improve our platform. This case scenario can be customized in many ways, and there is just a better way of handling our data. <br>
     By implementing this we can use Azure PaaS which has many advantages since we can focus more on production & development instead of operations. But to adress the elephant in the room; Security we'll need to talk about Azure Private Link and how that will prevent our communiations to be done publicly.
 </p>
-<h2>Azure Private Link</h2>
+<h2>How can we secure our data transfers?</h2>
+<h5>Virtual Private Cloud</h5>
+<p>
+    A virtual private cloud is a platform and environment for keeping virtual machines and services running.
+    This allows us to combine the security of private hosting, with the scalabilty and flexibility with public cloud hosting. <br>
+    This is also called VNet which stands for Virtual Network.<br>
+    <br>
+    The VPC(Virtual Private Cloud) offered by Azure is completely isolated from the public cloud and is highly configurable which means we can decide and monitor all data passthrough.<br><br>
+    <h5>VPC Accessibility</h5>
+    To access our VPC outside of the office we'll need to implement a VPN solution, which stands for virtual private network.<br>
+    A VPN is basically like a tunnel that goes between your client and the resource. This tunnel is "underground" and isolated from the rest of the public internet.<br>
+    By establishing a VPN connection we can simulate being on-prem over the internet while still maintaining the same security levels as physically being on that network.
+    <br><br>
+    <h5>Azure ExpressRoute</h5>
+    
+
+</p>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
