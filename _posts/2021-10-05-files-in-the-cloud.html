@@ -57,11 +57,13 @@ background: '/img/posts/files_cloud/banner.jpg'
     <br>
     All the different input arguments are inherited from an interface we call IOption. Therefore we can firstly make the check if the input match the interface(In other words all valid arguments) and instantiate our container there.
     This saves us some lines of code since we don't have to copy paste the part where we set the container value on every case scenario.<br>
-    This makes it easier to expand the application.
+    This alsomakes it easier to expand the application.
     <img src="https://techshelter.albin.dev/img/posts/files_cloud/03.jpg">
     <br><br>
     Now that we have our container client, when we parse the "Add" command we check if the input file exist first by full path, but if that fails we attempt to combine the input URI with the working directory of the app incase you only specify filename and then lastly upload the file to our blob.
     <img src="https://techshelter.albin.dev/img/posts/files_cloud/02.jpg">
+    The rest of the application is fairly simple IO and string formatting using commands such as DeleteBlob, DownloadTo, Upload, CreateIfNotExists.
+    Using Azure Blobs was surprisingly simple only needing a few lines of code to work.
 </p>
 <br>
 <br>
