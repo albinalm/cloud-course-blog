@@ -113,10 +113,29 @@ These costs would just double up every year assuming we in some imaginary world 
     You could basically hijack a file in two ways.
     When it's resting in the blob, or when it's in flight. Which means during transfers.<br>
     Therefore Microsoft needs to ensure both ways are encrypted.
-
-    <h5>Resting encryption</h5>
-    
 </p>
+<br><br>
+<h5>Resting encryption</h5>
+<p>
+    The files on the hard drive are encrypted using AES256 Rijndael algorithm with padding, initialization vectors and an encryption key from the Azure key vault. This is combined with additional salt that is secret server-side.<br>
+    The files are encrypted and decrypted everytime you make a request.
+</p>
+<h5>Flight encryption</h5>
+<p>This is the toughest part. When the file you requested are being routed to your home, the file in transit is completely decrypted. That means someone could just eavesdrop or catch your packages mid-flight. To ensure nobody can listen or look at your transmision we need to encrypt the line.
+    <br>
+    This is achieved via an encrypted TLS(Transport Layer Security) protocol combined with Forward Secrecy protocol.<br>
+    These protocols works a bit different but are very secure when combined.
+    <h5>Encrypted TLS</h5>
+    Encryped TLS works by making sure only the requesting computer and peek at the data. The transfer itself is encrypted both symetrically and assymetrically using a secret key only the server and client knows. This way only the client and server can see the content.
+    <br>
+    TLS evolved from SSL and is very common today.
+    <br>
+    <h5>Perfect Forward Secrecy</h5>
+    This is a method for keeping all transmissions safe. Basically the protocol renew a new encryption key for every transmission instead of keeping a connection open.
+    That means if you were to request 5 blocks in rapid succession each block would have a unique key instead of having a single encrypted transmission line.
+</p>
+<h5>Summary</h5>
+The developers on Microsoft has been having security in their mind from the get-go when developing this service. The security of Azure is not compromised in any way and is probably even more secure than hosting it yourself locally.
 <br>
 <br>
 <h6>Thank you for reading!</h6>
