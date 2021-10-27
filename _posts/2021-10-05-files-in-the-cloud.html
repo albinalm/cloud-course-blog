@@ -88,6 +88,23 @@ background: '/img/posts/files_cloud/banner.jpg'
     The data flow for the application is quite simple. Below I've posted a diagram showing you the flow when adding a new file to an existing blob.<br>
     <img src="https://techshelter.albin.dev/img/posts/files_cloud/05.jpg">
 </p>
+<h3>Pricing</h3>
+<p>If we put things into a scenario. Let us say we make a public blob insead for this CLI app that anyone can use.<br>
+By spicing that scenario we imagine 1000 users uploading 100Mb of data each day. What would the intial cost be, and how would that cost increase over time? <br> <br>
+Well this depends. If everything is hot storage we would land more expensive with a bigger server.
+<br>
+But what you could do is setting a margin, and structure your blobs. So data that get passed a certain date gets moved into cold storage. That way we can keep active data relevant and easy to retrieve while minimizing pricing for less relevant data.
+How you would set this up obviously depends on your data consumption. You could set the margin to a number of visits over a certain time period if you were to have an imaging site for instance.
+<br><br>
+But to keep it simple and relevant I'll assume that we will <strong>only</strong> use hot storage because we don't care and want everything we have super accessible.
+<br><br>
+A thousand users uploading 100MB everyday will result in a total of <strong>97.6 GB/day</strong> We do not wish to purchase more too often so we expect to expand every year.
+This would require us exactly 35624GBs or <strong>34.7 terabytes</strong> per year. Now also having an error margin of 20% so let's set our yearly server size to <strong>42TB</strong><br>
+With a blob size limit of 200GB and our total size of 42TB would need us 216 blobs if we wish to maximize efficiency and just cramp every data into a free blob.<br>
+With the 20% error margin we assume a writing of 120k per year and times that 10 for read(we assume people frequently look at photos) we would arrive at <strong>930$ per month</strong><br>
+<img src="https://techshelter.albin.dev/img/posts/files_cloud/06.jpg"><br>
+<img src="https://techshelter.albin.dev/img/posts/files_cloud/07.jpg"><br>
+</p>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
