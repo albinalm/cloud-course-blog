@@ -29,7 +29,7 @@ The code itself is very straightforward. We begin by reading the input JSON body
 If <i>"input"</i> doesn't exist we will log an <strong>error</strong> that we're missing important data.
 Although if this passes we will then attempt to calculate the formula put in input. If this process fails we will instead report an <strong>error</strong> containing the details of the exception.<br>
 This part can be built even further. You could for instance add a stopwatch to count the time taken to make the calculation and then log a warning if the timer exceeds a certain amount. <br>
-This isn't necessary for this application since it only makes simple mathematical equations.s
+This isn't necessary for this application since it only makes simple mathematical equations.
 <br><br>
 Now that you have logging activated publish your function app through GitHub or Visual Studio. I used a CI Pipeline through GitHub to publish mine. <br>
 When you can access the function in the Azure Portal you can activate logging by being on the function overview and going to the <strong>"Application Insights"</strong> tab. <br>
