@@ -46,7 +46,8 @@ Now you have monitoring activated on the app.
         <li>LogFatal</li>
     </ul>
     <br>
-Most of these are actually pretty simple. Information is when you just wish to store a certain message, maybe you just want to know if the code reached a certain point. This is kind of like Console.WriteLine where you just output relevant <strong>information.</strong><br>
+Most of these are actually pretty simple. <br><br>
+Information is when you just wish to store a certain message, maybe you just want to know if the code reached a certain point. This is kind of like Console.WriteLine where you just output relevant <strong>information.</strong><br>
 LogWarning is used for example when the code will fulfill it's purpose and the application will keep running, but there might be a property or a variable with a value that might cause problems later. Basically a heads up telling you this might cause bigger problems down the line with the butterly effect.<br>
 LogError is when the application fails doing something, although the failure not being critical to the business. Maybe just a calculation or a method fails, but the core application itself are still up and running.<br>
 Lastly we have the elephant in the room, the thing you actually never wish to see... The <strong>fatal</strong> type. This means something went very wrong. The core application maybe crashed or something failed that is critical for the organization. These types of errors usually require fast reactions since they can have a big impact on the organization.
