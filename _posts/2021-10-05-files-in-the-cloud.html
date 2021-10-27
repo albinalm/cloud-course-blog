@@ -51,7 +51,13 @@ background: '/img/posts/files_cloud/banner.jpg'
     For instance the end user can either store the secret connection string in dotnet secrets, or appsettings.yml. But if both exist we will always prioritize the secret.
     This way we can also distinguish testing from live when we develop the application as well which is handy.
 </p>
-<h5></h5>
+<h5>Using the code</h5>
+<p>
+    By defining the class <strong>BlobContainerClient</strong> as <i>contaniner</i> null initially and then instantiating it on use we can split our Program.cs into different use cases depending on the core input of the arguments.
+    <br>
+    For instance when we parse the "Add" command we check if the input file exist first by full path, but if that fails we attempt to combine the input URI with the working directory of the app incase you only specify filename.
+    <img src="https://techshelter.albin.dev/img/posts/files_cloud/02.jpg">
+</p>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
