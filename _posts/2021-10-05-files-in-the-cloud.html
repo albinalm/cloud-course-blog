@@ -65,7 +65,7 @@ background: '/img/posts/files_cloud/banner.jpg'
     The rest of the application is fairly simple IO and string formatting using methods in the BlobClient such as <strong>DeleteBlob, DownloadTo, Upload, CreateIfNotExists.</strong>
     Using Azure Blobs was surprisingly simple only needing a few lines of code to work.
 </p>
-<h5>Data flow</h5>
+<h3>Storage types & data flow</h3>
 <p>
     A blob can contain several <strong>files</strong> and a <strong>Container</strong> can contain several blobs. Lastly a <strong>Storage account</strong> can contain several containers.<br>
     Here is an example how you can separate blobs and containers.
@@ -83,7 +83,10 @@ background: '/img/posts/files_cloud/banner.jpg'
     But if you have large amount of data that you don't plan to access often, but you still wish to keep the possibility to access it, you can use cold storage. This is ideal for maybe older versions of your application downloadable on your website.
     It gives you slower access to the files, but a much cheaper price per gb.
     <br><br>
-    Lastly we have archive. And here you can store data that you never plan to access, but still want them stored. This is ideal for backups or maybe if you wish to keep an alpha/beta version of your application that is not downloadable. This is <strong>extremely</strong> cheap price per gb.
+    Lastly we have archive. And here you can store data that you never plan to access, but still want them stored. This is ideal for backups or maybe if you wish to keep an alpha/beta version of your application that is not downloadable. This is <strong>extremely</strong> cheap price per gb.<br><br>
+    <h5>Application data flow</h5>
+    The data flow for the application is quite simple. Below I've posted a diagram showing you the flow when adding a new file to an existing blob.<br>
+    <img src="https://techshelter.albin.dev/img/posts/files_cloud/05.jpg">
 </p>
 <br>
 <br>
