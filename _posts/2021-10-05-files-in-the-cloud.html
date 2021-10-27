@@ -62,8 +62,12 @@ background: '/img/posts/files_cloud/banner.jpg'
     <br><br>
     Now that we have our container client, when we parse the "Add" command we check if the input file exist first by full path, but if that fails we attempt to combine the input URI with the working directory of the app incase you only specify filename and then lastly upload the file to our blob.
     <img src="https://techshelter.albin.dev/img/posts/files_cloud/02.jpg"><br><br>
-    The rest of the application is fairly simple IO and string formatting using commands such as DeleteBlob, DownloadTo, Upload, CreateIfNotExists.
+    The rest of the application is fairly simple IO and string formatting using methods in the BlobClient such as <strong>DeleteBlob, DownloadTo, Upload, CreateIfNotExists.</strong>
     Using Azure Blobs was surprisingly simple only needing a few lines of code to work.
+</p>
+<h5>Data flow</h5>
+<p>
+    A blob can contain several <strong>files</strong> and a <strong>Container</strong> can contain several blobs. Lastly a <strong>Storage account</strong> can contain several <strong>containers.</strong>
 </p>
 <br>
 <br>
