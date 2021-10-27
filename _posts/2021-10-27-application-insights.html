@@ -57,6 +57,21 @@ Lastly we have the elephant in the room, the thing you actually never wish to se
 <img src="https://techshelter.albin.dev/img/posts/application_insights/04.jpg"><br>
 The flow here is quite simple. The end-user connects to our App Service and calls the azure function by making a calculation. If something goes wrong, let's say incorrect syntax, null values or any other thing that causes the process to fail it will send an error message to the logging instance which Application Insights will pick up.
 We can then monitor Application Insights and take action if neccessary.
+<br><br>
+<h5>Creating custom queries</h5>
+<p>One of the great things about Azure monitoring is that you can create queries to filter data exactly to your needs. This very useful since the amounts of messages can in a large application become obnoxious. Even if you make sure only to log relevant information there are other baseline messages being logged.<br>
+<strong>List severities with a minimum level of 3(Errors and fatals)</strong><br>
+<img src="https://techshelter.albin.dev/img/posts/application_insights/05.jpg"><br><br>
+<strong>List all traces between two dates</strong><br>
+<img src="https://techshelter.albin.dev/img/posts/application_insights/06.jpg"><br><br>
+These queries are very simple by nature. But if you were to have a more ambigious logging enabled you could customize this to your wildest dreams!<br>
+With support for graphical presentation as well using the term <strong>render</strong> together with a <i>type</i> such as chart you can get visual presentations instead.
+Let us say you always log response time on your application. You could then create a query to gather all response time information and then present you a visual graph of the average time, or maybe how many times the time exceeded a set amount?<br>
+You can also use these queries to filter out information regarding visits to your webiste. You could see exactly how many times your razor page loads per day in average.
+The possibilities are endless and thats why Azure Application Insights are used by so many companies today. It's such a powerful tool that is very accessible, easily configurable and easy to use!
+With proper logging you can enable monitoring that automatically alarms if a certain message was triggered. This way you can get notified immediately if something happened that shouldn't.
+<br>
+</p>
 <br>
 <br>
 <h6>Thank you for reading!</h6>
