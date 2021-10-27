@@ -18,7 +18,7 @@ background: '/img/posts/application_insights/banner.jpg'
 <h3>Adding Appliation insights to an Azure Function</h3>
 <p>For this demonstration i baked a web-app together with an azure function using old code. It's a basic calculator in ASP.NET that uses SignalR to update the GUI and an Azure Function to make the calculation.</p>
 <img src="https://techshelter.albin.dev/img/posts/application_insights/01.jpg"><br>
-<p>But what is interesting is that you can use the existing ILogger instance to send information that Application Insight will automatically pick up without any configuration.<br>
+<p>But what is interesting is that you can use the existing ILogger instance to send information that Application Insight will automatically pick up without any configuration.<br> <br>
 <strong>First of all</strong> add logging to your existing function. My logging looks like this:
 <br>
 <img src="https://techshelter.albin.dev/img/posts/application_insights/02.jpg"><br><br>
@@ -27,8 +27,11 @@ Depending if you just log a message, warning or error they get different severit
 <br><br>
 Now that you have logging activated publish your function app through GitHub or Visual Studio. I used a CI Pipeline through GitHub to publish mine. <br>
 When you can access the function in the Azure Portal you can activate logging by being on the function overview and going to the <strong>"Application Insights"</strong> tab. <br>
-<a href="https://techshelter.albin.dev/img/posts/application_insights/03.jpg" target="_blank" style="color: cornflowerblue !important;">Image here!</a>
+<a href="https://techshelter.albin.dev/img/posts/application_insights/03.jpg" target="_blank" style="color: cornflowerblue !important;">Image here!</a> <br>
+Now you have monitoring activated on the app.
 </p><br>
+<br>
+<h3>Data flow and queries</h3>
 
 <br>
 <br>
