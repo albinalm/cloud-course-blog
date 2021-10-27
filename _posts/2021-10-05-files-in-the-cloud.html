@@ -17,6 +17,13 @@ background: '/img/posts/files_cloud/banner.jpg'
     It can be several files or just one file. You can then read the bytes of the blob to a new file or write additional bytes to the blob.
 
     The pros of a blob is mnany, but one of them is that it's quite simple in  it's design. It does not use any fancy standards like POSIX and thus the straightforward design makes it simple to extend, but also simple to use on several platforms.<br>
+    A blob is most often used to store non-structured data such as multimedia, but honestly you can also use it to store variables or any other data. So it's quite flexible.<br><br>
+    But since you may wish to use blobs for different reasons there are actually three types of blobs that are optimized for a specific use.
+    <ul>
+        <li><strong>Block blob:</strong> A block blob is a blob, but it's been thrown in a dice cutter and consist of several blocks forming your blob. This type of blob is optimized for file sharing</li>
+        <li><strong>Page blob:</strong> A page blob is kind of different. It instead using pages that each consist of 512 bytes. This type of blob is optimized for storing your databases or partitions for your VM.</li>
+        <li><strong>Append blob:</strong> An append blob works the same as a block blob, but as the name implies you primarily use it to append additional data. Therefore you are unable to update existing data nor deletion. An append blob can hold slightly more data than the previous types. It's optimized for uses when you continously wish to add data.</li>
+    </ul>
     For this blog post I made a console application to emulate an Azure Blob.
 </p>
 <h2>Making the app</h2><br>
