@@ -28,8 +28,20 @@ Scaling vertically, <i>Also known as <strong>Scaling out/in</strong></i> is the 
 This is quite more complex in nature, but can prove to be a more powerful and a more flexible scaling solution when done right.
 Although being more complex, it requires proper knowledge and infrastructure for it to work. It can also take a while to set up, which makes it a bad choice in situations where time matters.<br>
 But since you are adding more computers instead of improving existing one(s) you have no performance cap. It can be used as a solution when you have reached the server limit on vertical scaling, or just if you require additional redundancy which is also a very good benefit.<br>
-Since several computers work in symbiosis, if one decides to take some vacation - the rest will keep running. This will give you a performance hit, but it will not go down completely.<br>¨
+Since several computers work in symbiosis, if one decides to take some vacation - the rest will keep running. This will give you a performance hit, but it will not go down completely.<br>
 It's worth noting that using horizontal scaling just for the benefit of redundancy is most often not worth it, since there are several options with many being free in cloud providers that give you redundancy even when scaling vertically.
+<br>
+<h3>Pricing</h3>
+<br>
+When it comes to primarily Azure, it isn't necessarily more expensive to horizontal scale than vertical scale. The price for two servers of equal power is mostly the same as doubling the power.
+Where the price will differ is when it comes to licensing. Both your OS but also all necessary applications.<br>
+<h4>App Service</h4>
+The P1V2 App service(Where the P stands for Premium plan, which we'll get to later.) has limited performance with a few(3.5) gigs of RAM, a single CPU core and a Windows OS license will cost us 1367.60 SEK per month, per machine.
+While a single P2V2(The big brother with literally double power) costs 2735,2 SEK. It's literally the same as to using two P1V2's.
+<br>
+In conclusion the price doesn't really matter regarding scalability. You need to pick what is necessary for your use case.
+What could be worth noting is that since app service auto scale to a maximum of the capacity above, running a single machine will be cheaper since it will only burst to full power occasionally and therefore only provide additional cost when needed.<br>
+Running dual machines will be closer to a fixed amount each month.
 
 </p>
 <h6>Thank you for reading!</h6>
