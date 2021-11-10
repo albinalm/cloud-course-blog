@@ -48,6 +48,17 @@ So what you pick here really depends on your application infrastructure and what
 <br>In a way it's good that the pricing is so similar. It gives you as a consumer higher flexibility when choosing your method without thinking too much of the server pricing.
 <br><br>
 <h3>App service tiers</h3>
+When hosting an app service in Azure you will be presented with a few different tiers.
+<ul>
+    <li>Free: A free tier. No fancy stuff, low power and definitely no scaling.</li>
+    <li>Shared: The cheapest non-free alternative. Basically a free tier with more sauce. Still no fancy features like SLA, and definitely no scaling.</li>
+    <li>Basic: What it sounds like. Has the lowest amount of auto-scaling, and has the lowest SLA level.</li>
+    <li>Standard: This is what most services will use that has traffic. It's basically what you would expect from an Azure service. Just like the basic tier but upgraded. Larger scalability, SSL support and other candy.</li>
+    <li>Premium: To keep it simple, it's a standard plan with better hardware.</li>
+    <li>Isolated: This gives you access to your resource through the Azure Secure VNet whilst having all the benefits from the premium plan.</li>
+</ul>
+<br>
+As you may notice not all of the plans support auto-scaling and the feature length differs alot. Therefore it's important that you pick a service plan that will suit your needs.
 </p>
 <h6>Thank you for reading!</h6>
 <p>/Albin</p>
