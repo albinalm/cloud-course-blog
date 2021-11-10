@@ -22,7 +22,7 @@ Scaling vertically, <i>Also known as <strong>Scaling up/down</strong></i> basica
 The goal is to resize your capacity without altering any code. There is several benefits of this, with one of them being fast and efficient. Though the major downside is that you are capped at the maximum capacity of the server.
 This is proven to be the most cost effective way to scale since when done automatically it just adds the power necessary to meet the demands. Also, it's very straightforward and requires minimal to no configuration on the application service to work.
 It's elegant and simple. Just add more sauce.
-<br>
+<br><br>
 <h3>Horizontal scaling</h3>
 Scaling vertically, <i>Also known as <strong>Scaling out/in</strong></i> is the art of adding more computers to run the app service. These computers run in a cluster and work in symbiosis to provide data and running your app.
 This is quite more complex in nature, but can prove to be a more powerful and a more flexible scaling solution when done right.
@@ -30,9 +30,8 @@ Although being more complex, it requires proper knowledge and infrastructure for
 But since you are adding more computers instead of improving existing one(s) you have no performance cap. It can be used as a solution when you have reached the server limit on vertical scaling, or just if you require additional redundancy which is also a very good benefit.<br>
 Since several computers work in symbiosis, if one decides to take some vacation - the rest will keep running. This will give you a performance hit, but it will not go down completely.<br>
 It's worth noting that using horizontal scaling just for the benefit of redundancy is most often not worth it, since there are several options with many being free in cloud providers that give you redundancy even when scaling vertically.
-<br>
+<br><br>
 <h3>Pricing</h3>
-<br>
 When it comes to primarily Azure, it isn't necessarily more expensive to horizontal scale than vertical scale. The price for two servers of equal power is mostly the same as doubling the power.
 Where the price will differ is when it comes to licensing. Both your OS but also all necessary applications.<br>
 <h4>App Service</h4>
@@ -40,9 +39,15 @@ The P1V2 App service(Where the P stands for Premium plan, which we'll get to lat
 While a single P2V2(The big brother with literally double power) costs 2735,2 SEK. It's literally the same as to using two P1V2's.
 <br>
 In conclusion the price doesn't really matter regarding scalability. You need to pick what is necessary for your use case.
-What could be worth noting is that since app service auto scale to a maximum of the capacity above, running a single machine will be cheaper since it will only burst to full power occasionally and therefore only provide additional cost when needed.<br>
+What could be worth noting is that since app service auto scale to a maximum of the capacity above, running a single machine might be cheaper since it will only burst to full power occasionally and therefore only provide additional cost when needed.<br>
 Running dual machines will be closer to a fixed amount each month.
-
+<br><br>
+<h4>Virtual Machines</h4>
+Just like app service, running dual D2V3 has the same price of running a single D2V4. Although VMs lack the ability to autoscale which means they will always run in full power.
+So what you pick here really depends on your application infrastructure and what you need. Maybe you just need some more power for an existing application quickly and don't have an infrastructure for horizontal scaling, then vertical is the way to go.
+<br>In a way it's good that the pricing is so similar. It gives you as a consumer higher flexibility when choosing your method without thinking too much of the server pricing.
+<br><br>
+<h3>App service tiers</h3>
 </p>
 <h6>Thank you for reading!</h6>
 <p>/Albin</p>
