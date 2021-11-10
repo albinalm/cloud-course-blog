@@ -24,6 +24,7 @@ This is proven to be the most cost effective way to scale since when done automa
 It's elegant and simple. Just add more sauce.
 <br><br>
 <h3>Horizontal scaling</h3>
+<br>
 Scaling vertically, <i>Also known as <strong>Scaling out/in</strong></i> is the art of adding more computers to run the app service. These computers run in a cluster and work in symbiosis to provide data and running your app.
 This is quite more complex in nature, but can prove to be a more powerful and a more flexible scaling solution when done right.
 Although being more complex, it requires proper knowledge and infrastructure for it to work. It can also take a while to set up, which makes it a bad choice in situations where time matters.<br>
@@ -32,9 +33,12 @@ Since several computers work in symbiosis, if one decides to take some vacation 
 It's worth noting that using horizontal scaling just for the benefit of redundancy is most often not worth it, since there are several options with many being free in cloud providers that give you redundancy even when scaling vertically.
 <br><br>
 <h3>Pricing</h3>
+<br>
 When it comes to primarily Azure, it isn't necessarily more expensive to horizontal scale than vertical scale. The price for two servers of equal power is mostly the same as doubling the power.
 Where the price will differ is when it comes to licensing. Both your OS but also all necessary applications.<br>
+<br>
 <h4>App Service</h4>
+<br>
 The P1V2 App service(Where the P stands for Premium plan, which we'll get to later.) has limited performance with a few(3.5) gigs of RAM, a single CPU core and a Windows OS license will cost us 1367.60 SEK per month, per machine.
 While a single P2V2(The big brother with literally double power) costs 2735,2 SEK. It's literally the same as to using two P1V2's.
 <br>
@@ -43,11 +47,13 @@ What could be worth noting is that since app service auto scale to a maximum of 
 Running dual machines will be closer to a fixed amount each month.
 <br><br>
 <h4>Virtual Machines</h4>
+<br>
 Just like app service, running dual D2V3 has the same price of running a single D2V4. Although VMs lack the ability to autoscale which means they will always run in full power.
 So what you pick here really depends on your application infrastructure and what you need. Maybe you just need some more power for an existing application quickly and don't have an infrastructure for horizontal scaling, then vertical is the way to go.
 <br>In a way it's good that the pricing is so similar. It gives you as a consumer higher flexibility when choosing your method without thinking too much of the server pricing.
 <br><br>
 <h3>App service tiers</h3>
+<br>
 When hosting an app service in Azure you will be presented with a few different tiers.
 <ul>
     <li>Free: A free tier. No fancy stuff, low power and definitely no scaling.</li>
