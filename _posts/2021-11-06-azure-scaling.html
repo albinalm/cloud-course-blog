@@ -18,10 +18,19 @@ background: '/img/posts/azure-scaling/banner.jpg'
 <br>
 <h3>Vertical scaling</h3>
 <br>
-Scaling vertically basically means improving what you already have. This is most often by adding additional CPU Cores, RAM, Disk space and more. Many times even all at once.<br>
+Scaling vertically, <i>Also known as <strong>Scaling up/down</strong></i> basically means improving what you already have. This is most often by adding additional CPU Cores, RAM, Disk space and more. Many times even all at once.<br>
 The goal is to resize your capacity without altering any code. There is several benefits of this, with one of them being fast and efficient. Though the major downside is that you are capped at the maximum capacity of the server.
 This is proven to be the most cost effective way to scale since when done automatically it just adds the power necessary to meet the demands. Also, it's very straightforward and requires minimal to no configuration on the application service to work.
 It's elegant and simple. Just add more sauce.
+<br>
+<h3>Horizontal scaling</h3>
+Scaling vertically, <i>Also known as <strong>Scaling out/in</strong></i> is the art of adding more computers to run the app service. These computers run in a cluster and work in symbiosis to provide data and running your app.
+This is quite more complex in nature, but can prove to be a more powerful and a more flexible scaling solution when done right.
+Although being more complex, it requires proper knowledge and infrastructure for it to work. It can also take a while to set up, which makes it a bad choice in situations where time matters.<br>
+But since you are adding more computers instead of improving existing one(s) you have no performance cap. It can be used as a solution when you have reached the server limit on vertical scaling, or just if you require additional redundancy which is also a very good benefit.<br>
+Since several computers work in symbiosis, if one decides to take some vacation - the rest will keep running. This will give you a performance hit, but it will not go down completely.<br>¨
+It's worth noting that using horizontal scaling just for the benefit of redundancy is most often not worth it, since there are several options with many being free in cloud providers that give you redundancy even when scaling vertically.
+
 </p>
 <h6>Thank you for reading!</h6>
 <p>/Albin</p>
